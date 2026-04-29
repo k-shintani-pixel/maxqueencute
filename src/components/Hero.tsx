@@ -183,6 +183,24 @@ export function Hero() {
         </motion.p>
       </div>
 
+      {/* ── Top-right image ── */}
+      <motion.div
+        initial={{ opacity: 0, x: 20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1.2, delay: 0.6 }}
+        className="absolute top-4 right-4 md:top-8 md:right-8 pointer-events-none"
+        aria-hidden="true"
+      >
+        <Image
+          src="/images/hero-top-right.png"
+          alt=""
+          width={300}
+          height={300}
+          className="w-40 md:w-64 lg:w-72 h-auto object-contain"
+          priority
+        />
+      </motion.div>
+
       {/* ── Bottom-left image ── */}
       <motion.div
         initial={{ opacity: 0, x: -20 }}
