@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@theme {
+  /* Colors */
+  --color-base: #FAF6F0;
+  --color-secondary: #F0E9DC;
+  --color-accent-light: #C4B5DB;
+  --color-accent-dark: #7C6B95;
+  --color-gold-light: #B8945F;
+  --color-gold-dark: #8B6F3D;
+  --color-text-primary: #3D2E20;
+  --color-text-secondary: #6B5544;
+
+  /* Fonts */
+  --font-script: var(--font-italianno);
+  --font-serif: var(--font-cormorant);
+  --font-jp: var(--font-noto-serif-jp);
+}
+
+:root {
+  --background: #FAF6F0;
+  --foreground: #3D2E20;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-noto-serif-jp), 'Noto Serif JP', serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF6F0;
+}
+::-webkit-scrollbar-thumb {
+  background: #C4B5DB;
+  border-radius: 3px;
+}
+
+/* Italianno script font helper */
+.font-script {
+  font-family: var(--font-italianno), cursive;
+}
+
+/* Cormorant Garamond serif helper */
+.font-serif-display {
+  font-family: var(--font-cormorant), serif;
+}
+
+/* Noto Serif JP helper */
+.font-jp {
+  font-family: var(--font-noto-serif-jp), 'Noto Serif JP', serif;
+}

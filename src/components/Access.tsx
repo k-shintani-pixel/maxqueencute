@@ -1,0 +1,164 @@
+import { FadeIn } from '@/components/ui/FadeIn';
+import { Frame } from '@/components/ui/Frame';
+import { Divider } from '@/components/ui/Divider';
+import { siteConfig } from '@/config/site';
+import { MapPin, Clock, Car, CreditCard, CheckCircle } from 'lucide-react';
+
+type InfoRow = {
+  icon: React.ReactNode;
+  label: string;
+  value: React.ReactNode;
+};
+
+export function Access() {
+  const { access } = siteConfig;
+
+  const infoRows: InfoRow[] = [
+    {
+      icon: <MapPin size={16} aria-hidden="true" />,
+      label: '住所',
+      value: access.address,
+    },
+    {
+      icon: <Clock size={16} aria-hidden="true" />,
+      label: '営業時間',
+      value: (
+        <>
+          {access.hours}
+          <span className="ml-2 font-serif-display text-xs tracking-wide text-accent-dark">
+            {access.closedDays}
+          </span>
+        </>
+      ),
+    },
+    {
+      icon: <Car size={16} aria-hidden="true" />,
+      label: '駐車場',
+      value: access.parking,
+    },
+    {
+      icon: (
+        <CreditCard size={16} aria-hidden="true" />
+      ),
+      label: 'お支払い',
+      value: (
+        <div>
+          <span className="inline-block bg-text-primary text-base text-xs px-2 py-0.5 font-serif-display tracking-wider mb-2">
+            現金不可
+          </span>
+          <p className="font-jp text-sm text-text-secondary">{access.payment}</p>
+          <ul className="mt-1 space-y-0.5">
+            {access.paymentMethods.map((method) => (
+              <li key={method} className="font-jp text-xs text-text-secondary/60">
+                ・{method}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ),
+    },
+  ];
+
+  return (
+    <section
+      id="access"
+      className="relative py-24 md:py-40 px-4"
+      style={{ background: 'linear-gradient(180deg, #F0E9DC 0%, #FAF6F0 100%)' }}
+      aria-labelledby="access-heading"
+    >
+      <div className="max-w-4xl mx-auto">
+        {/* Header */}
+        <FadeIn>
+          <p className="font-serif-display text-xs tracking-[0.5em] text-gold-light uppercase text-center mb-4">
+            Access
+          </p>
+          <h2
+            id="access-heading"
+            className="font-script text-5xl md:text-6xl text-text-primary text-center leading-tight mb-12"
+          >
+            アクセス
+          </h2>
+        </FadeIn>
+
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
+          {/* Map */}
+          <FadeIn delay={0.1} direction="right">
+            <Frame variant="default" className="overflow-hidden">
+              {/* Google Maps embed placeholder */}
+              <div
+                className="w-full h-64 md:h-80 bg-secondary flex items-center justify-center relative"
+                aria-label="Googleマップ（準備中）"
+              >
+                <div className="text-center">
+                  <MapPin size={32} className="text-accent-light mx-auto mb-2" aria-hidden="true" />
+                  <p className="font-serif-display text-xs tracking-widest text-text-secondary/50 uppercase">
+                    Google Maps
+                  </p>
+                  <p className="font-jp text-xs text-text-secondary/40 mt-1">
+                    ※ 埋め込みコードは後で差し替え
+                  </p>
+                </div>
+                {/*
+                  後でこのdivを以下のiframeに差し替えてください:
+                  <iframe
+                    src="[GOOGLE_MAPS_EMBED_URL]"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="MaxQueenCute / Nail salon Ruri へのアクセス"
+                  />
+                */}
+              </div>
+            </Frame>
+          </FadeIn>
+
+          {/* Info */}
+          <FadeIn delay={0.2} direction="left">
+            <Frame variant="default" className="p-6 md:p-8">
+              {/* Notes badges */}
+              <div className="flex flex-wrap gap-2 mb-6">
+                {access.notes.map((note) => (
+                  <span
+                    key={note}
+                    className="inline-flex items-center gap-1 border border-accent-dark/40 px-3 py-1"
+                  >
+                    <CheckCircle size={12} className="text-accent-dark" aria-hidden="true" />
+                    <span className="font-serif-display text-xs tracking-wide text-accent-dark">
+                      {note}
+                    </span>
+                  </span>
+                ))}
+              </div>
+
+              <dl className="space-y-5">
+                {infoRows.map((row) => (
+                  <div key={row.label} className="flex gap-3">
+                    <dt className="flex-shrink-0 flex items-start gap-2 pt-0.5 w-28">
+                      <span className="text-gold-light">{row.icon}</span>
+                      <span className="font-serif-display text-xs tracking-widest text-text-secondary/60 uppercase">
+                        {row.label}
+                      </span>
+                    </dt>
+                    <dd className="flex-1 font-jp text-sm text-text-primary">{row.value}</dd>
+                  </div>
+                ))}
+              </dl>
+
+              {/* Seats */}
+              <div className="mt-5 pt-5 border-t border-gold-light/20">
+                <p className="font-serif-display text-xs tracking-widest text-text-secondary/50">
+                  設備 — {access.seats}
+                </p>
+              </div>
+            </Frame>
+          </FadeIn>
+        </div>
+      </div>
+
+      <Divider className="max-w-xs mx-auto" />
+    </section>
+  );
+}
