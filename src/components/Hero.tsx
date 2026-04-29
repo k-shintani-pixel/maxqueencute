@@ -188,7 +188,7 @@ export function Hero() {
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1.2, delay: 0.6 }}
-        className="absolute bottom-0 left-0 pointer-events-none"
+        className="absolute bottom-4 left-4 md:bottom-8 md:left-8 pointer-events-none"
         aria-hidden="true"
       >
         <Image
