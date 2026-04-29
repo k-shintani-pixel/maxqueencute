@@ -129,12 +129,6 @@ export function Access() {
                 ))}
               </dl>
 
-              {/* Seats */}
-              <div className="mt-5 pt-5 border-t border-gold-light/20">
-                <p className="font-serif-display text-xs tracking-widest text-ink-sub/50">
-                  設備 — {access.seats}
-                </p>
-              </div>
             </Frame>
           </FadeIn>
         </div>
