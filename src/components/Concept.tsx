@@ -10,7 +10,7 @@ export function Concept() {
   return (
     <section
       id="concept"
-      className="relative py-28 md:py-44 px-4 overflow-hidden"
+      className="relative py-14 md:py-20 px-4 overflow-hidden"
       style={{
         /* ライトクリーム背景 + 大理石ベイン（オーバーレイdivなしでセクション自体に直接適用） */
         backgroundColor: '#FDF2F4',

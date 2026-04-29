@@ -36,7 +36,7 @@ export function School() {
   return (
     <section
       id="school"
-      className="relative py-24 md:py-40 px-4 bg-base"
+      className="relative py-12 md:py-16 px-4 bg-base"
       aria-labelledby="school-heading"
     >
       {/* Decorative background text */}

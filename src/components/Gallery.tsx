@@ -93,7 +93,7 @@ export function Gallery() {
   return (
     <section
       id="gallery"
-      className="relative py-24 md:py-40 px-4"
+      className="relative py-12 md:py-16 px-4"
       style={{ background: 'linear-gradient(180deg, #FFFFFF 0%, #FDF2F4 100%)' }}
       aria-labelledby="gallery-heading"
     >

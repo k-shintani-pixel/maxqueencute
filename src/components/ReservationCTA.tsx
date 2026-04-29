@@ -13,7 +13,7 @@ export function ReservationCTA() {
   return (
     <section
       id="reservation"
-      className="relative py-28 md:py-48 px-4 overflow-hidden"
+      className="relative py-14 md:py-20 px-4 overflow-hidden"
       style={{
         background:
           'linear-gradient(160deg, #3D0A1E 0%, #7B1A3C 30%, #C05070 55%, #EDA8BB 78%, #FDF2F4 100%)',

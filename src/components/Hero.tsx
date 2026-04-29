@@ -16,7 +16,7 @@ export function Hero() {
       <div
         className="absolute inset-0"
         style={{
-          background: '#EDA8BB',
+          background: '#F8D0DF',
         }}
         aria-hidden="true"
       />
@@ -76,8 +76,8 @@ export function Hero() {
             className="font-script leading-none"
             style={{
               fontSize: 'clamp(3.5rem, 10vw, 8rem)',
-              color: '#FDF2F4',
-              textShadow: `0 2px 24px rgba(139,34,82,0.35), 0 0 60px rgba(212,175,55,0.12)`,
+              color: GOLD,
+              textShadow: `0 2px 20px rgba(139,34,82,0.2), 0 0 40px rgba(212,175,55,0.2)`,
             }}
           >
             {siteConfig.salons.maxqueencute.name}
@@ -109,8 +109,8 @@ export function Hero() {
             className="font-script leading-none"
             style={{
               fontSize: 'clamp(2rem, 6vw, 5rem)',
-              color: 'rgba(253,242,244,0.82)',
-              textShadow: '0 2px 16px rgba(139,34,82,0.28)',
+              color: 'rgba(212,175,55,0.85)',
+              textShadow: '0 2px 12px rgba(139,34,82,0.15)',
             }}
           >
             {siteConfig.salons.ruri.name}
@@ -134,7 +134,7 @@ export function Hero() {
             <span style={{ color: 'rgba(253,242,244,0.7)', fontSize: '0.55rem' }} aria-hidden="true">✦</span>
             <p
               className="font-serif-display text-xs tracking-[0.4em] uppercase"
-              style={{ color: 'rgba(253,242,244,0.88)' }}
+              style={{ color: 'rgba(61,43,43,0.75)' }}
             >
               {siteConfig.school.name}
             </p>
@@ -176,7 +176,7 @@ export function Hero() {
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1.3 }}
           className="font-serif-display text-xs tracking-[0.35em] mt-4 uppercase"
-          style={{ color: 'rgba(212,175,55,0.5)' }}
+          style={{ color: 'rgba(156,122,26,0.7)' }}
         >
           Urayasu, Chiba
         </motion.p>
@@ -190,7 +190,7 @@ export function Hero() {
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
         aria-hidden="true"
       >
-        <span className="font-serif-display text-xs tracking-[0.35em] uppercase" style={{ color: 'rgba(212,175,55,0.45)' }}>
+        <span className="font-serif-display text-xs tracking-[0.35em] uppercase" style={{ color: 'rgba(156,122,26,0.65)' }}>
           scroll
         </span>
         <motion.div

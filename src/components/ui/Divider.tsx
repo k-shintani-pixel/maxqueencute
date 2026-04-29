@@ -10,7 +10,7 @@ export function Divider({ className = '', variant = 'diamond', tone = 'default' 
   const goldFill = tone === 'light' ? 'rgba(212,175,55,0.7)' : '#D4AF37';
 
   return (
-    <div className={`flex items-center justify-center my-12 md:my-16 ${className}`} aria-hidden="true">
+    <div className={`flex items-center justify-center my-8 md:my-10 ${className}`} aria-hidden="true">
       <svg width="220" height="22" viewBox="0 0 220 22" fill="none">
         {/* Left line — gradient fade */}
         <defs>

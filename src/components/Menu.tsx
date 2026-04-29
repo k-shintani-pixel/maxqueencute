@@ -117,7 +117,7 @@ export function Menu() {
   return (
     <section
       id="menu"
-      className="relative py-24 md:py-40 px-4"
+      className="relative py-12 md:py-16 px-4"
       style={{ background: 'linear-gradient(180deg, #FDF2F4 0%, #FFFFFF 100%)' }}
       aria-labelledby="menu-heading"
     >
@@ -149,7 +149,7 @@ export function Menu() {
                 aria-selected={activeTab === tab.id}
                 aria-controls={`panel-${tab.id}`}
                 onClick={() => setActiveTab(tab.id)}
-                className={`flex-1 font-serif-display text-xs md:text-sm tracking-widest py-3 px-4 transition-all ${
+                className={`flex-1 font-serif-display text-sm md:text-base tracking-wider py-3 px-4 transition-all ${
                   activeTab === tab.id
                     ? 'text-gold-dark border-b-2 border-gold-light -mb-px'
                     : 'text-ink-sub/50 hover:text-ink-sub'

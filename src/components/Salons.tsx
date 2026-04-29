@@ -23,7 +23,7 @@ export function Salons() {
   return (
     <section
       id="salons"
-      className="relative py-28 md:py-44 px-4 marble-section overflow-hidden"
+      className="relative py-14 md:py-20 px-4 marble-section overflow-hidden"
       aria-labelledby="salons-heading"
     >
       {/* Soft radial glow */}

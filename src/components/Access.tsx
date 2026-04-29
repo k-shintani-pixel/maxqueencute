@@ -62,7 +62,7 @@ export function Access() {
   return (
     <section
       id="access"
-      className="relative py-24 md:py-40 px-4"
+      className="relative py-12 md:py-16 px-4"
       style={{ background: 'linear-gradient(180deg, #FDF2F4 0%, #FFFFFF 100%)' }}
       aria-labelledby="access-heading"
     >
