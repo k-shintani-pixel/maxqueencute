@@ -1,63 +1,190 @@
 @import "tailwindcss";
 
 @theme {
-  /* Colors */
-  --color-base: #FAF6F0;
+  /* ── Base colors ── */
+  --color-base:      #FAF6F0;
   --color-secondary: #F0E9DC;
-  --color-accent-light: #C4B5DB;
-  --color-accent-dark: #7C6B95;
-  --color-gold-light: #B8945F;
-  --color-gold-dark: #8B6F3D;
-  --color-text-primary: #3D2E20;
-  --color-text-secondary: #6B5544;
 
-  /* Fonts */
-  --font-script: var(--font-italianno);
-  --font-serif: var(--font-cormorant);
-  --font-jp: var(--font-noto-serif-jp);
+  /* ── Accent purples ── */
+  --color-accent-light: #C4B5DB;
+  --color-accent-mid:   #8A6AAB;
+  --color-accent-dark:  #5C3D8A;
+  --color-purple-deep:  #2D1854;
+
+  /* ── Gold — metallic rich gold ── */
+  --color-gold-light: #D4AF37;
+  --color-gold-mid:   #C5A028;
+  --color-gold-dark:  #9C7A1A;
+
+  /* ── Text ── */
+  --color-text-primary:   #2A1F14;
+  --color-text-secondary: #5A4535;
+
+  /* ── Fonts ── */
+  --font-script:  var(--font-italianno);
+  --font-serif:   var(--font-cormorant);
+  --font-jp:      var(--font-noto-serif-jp);
 }
 
+/* ── Root variables ── */
 :root {
   --background: #FAF6F0;
-  --foreground: #3D2E20;
+  --foreground: #2A1F14;
 }
 
+/* ─────────────────────────────────────────
+   Body — marble texture base
+───────────────────────────────────────── */
 body {
-  background: var(--background);
+  background-color: #FAF6F0;
+  /* Subtle marble veining: stacked thin gradients simulate stone grain */
+  background-image:
+    repeating-linear-gradient(
+      108deg,
+      transparent 0px,
+      transparent 68px,
+      rgba(255, 255, 255, 0.12) 68px,
+      rgba(255, 255, 255, 0.12) 69px
+    ),
+    repeating-linear-gradient(
+      72deg,
+      transparent 0px,
+      transparent 110px,
+      rgba(212, 175, 55, 0.035) 110px,
+      rgba(212, 175, 55, 0.035) 111px
+    ),
+    repeating-linear-gradient(
+      130deg,
+      transparent 0px,
+      transparent 90px,
+      rgba(196, 181, 219, 0.04) 90px,
+      rgba(196, 181, 219, 0.04) 91px
+    ),
+    repeating-linear-gradient(
+      85deg,
+      transparent 0px,
+      transparent 150px,
+      rgba(255, 255, 255, 0.08) 150px,
+      rgba(255, 255, 255, 0.08) 151px
+    );
   color: var(--foreground);
   font-family: var(--font-noto-serif-jp), 'Noto Serif JP', serif;
-  -webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing:  antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Smooth scrolling */
 html {
   scroll-behavior: smooth;
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 6px;
+/* ─────────────────────────────────────────
+   Scrollbar
+───────────────────────────────────────── */
+::-webkit-scrollbar       { width: 6px; }
+::-webkit-scrollbar-track { background: #F0E9DC; }
+::-webkit-scrollbar-thumb { background: #D4AF37; border-radius: 3px; }
+
+/* ─────────────────────────────────────────
+   Font helpers
+───────────────────────────────────────── */
+.font-script       { font-family: var(--font-italianno), cursive; }
+.font-serif-display{ font-family: var(--font-cormorant), serif; }
+.font-jp           { font-family: var(--font-noto-serif-jp), 'Noto Serif JP', serif; }
+
+/* ─────────────────────────────────────────
+   Gold shimmer — metallic sweep on hover
+   Usage: add class "btn-gold" to the element
+───────────────────────────────────────── */
+.btn-gold {
+  background: linear-gradient(
+    90deg,
+    #9C7A1A  0%,
+    #C5A028 20%,
+    #D4AF37 35%,
+    #EDD97A 50%,
+    #D4AF37 65%,
+    #C5A028 80%,
+    #9C7A1A 100%
+  );
+  background-size: 220% 100%;
+  background-position: 100% 50%;
+  transition: background-position 0.7s ease, box-shadow 0.3s ease;
+  color: #fff;
 }
-::-webkit-scrollbar-track {
-  background: #FAF6F0;
-}
-::-webkit-scrollbar-thumb {
-  background: #C4B5DB;
-  border-radius: 3px;
+.btn-gold:hover {
+  background-position: 0% 50%;
+  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.35), 0 0 0 1px rgba(212, 175, 55, 0.2);
 }
 
-/* Italianno script font helper */
-.font-script {
-  font-family: var(--font-italianno), cursive;
+/* ─────────────────────────────────────────
+   Glass card — backdrop-blur glassmorphism
+   Usage: add class "glass-card" to element
+───────────────────────────────────────── */
+.glass-card {
+  background: rgba(250, 246, 240, 0.65);
+  backdrop-filter: blur(16px) saturate(1.4);
+  -webkit-backdrop-filter: blur(16px) saturate(1.4);
+  border: 1px solid rgba(212, 175, 55, 0.18);
 }
 
-/* Cormorant Garamond serif helper */
-.font-serif-display {
-  font-family: var(--font-cormorant), serif;
+/* Darker variant for purple-background sections */
+.glass-card-dark {
+  background: rgba(45, 24, 84, 0.45);
+  backdrop-filter: blur(16px) saturate(1.2);
+  -webkit-backdrop-filter: blur(16px) saturate(1.2);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  color: #FAF6F0;
 }
 
-/* Noto Serif JP helper */
-.font-jp {
-  font-family: var(--font-noto-serif-jp), 'Noto Serif JP', serif;
+/* ─────────────────────────────────────────
+   Outline button — gold border shimmer
+───────────────────────────────────────── */
+.btn-outline-gold {
+  background: transparent;
+  border: 1px solid #D4AF37;
+  color: #2A1F14;
+  transition: background 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+}
+.btn-outline-gold:hover {
+  background: rgba(212, 175, 55, 0.08);
+  box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.4), inset 0 0 12px rgba(212, 175, 55, 0.06);
+  color: #9C7A1A;
+}
+
+/* ─────────────────────────────────────────
+   LINE button on dark purple background
+───────────────────────────────────────── */
+.btn-line-dark {
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  color: rgba(250, 246, 240, 0.75);
+  background: transparent;
+  transition: border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+.btn-line-dark:hover {
+  border-color: rgba(212, 175, 55, 0.7);
+  color: #FAF6F0;
+  box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.2);
+}
+
+/* ─────────────────────────────────────────
+   Marble section background helper
+───────────────────────────────────────── */
+.marble-section {
+  background-color: #F8F2E8;
+  background-image:
+    repeating-linear-gradient(
+      105deg,
+      transparent 0px, transparent 55px,
+      rgba(255,255,255,0.15) 55px, rgba(255,255,255,0.15) 56px
+    ),
+    repeating-linear-gradient(
+      78deg,
+      transparent 0px, transparent 95px,
+      rgba(212,175,55,0.04) 95px, rgba(212,175,55,0.04) 96px
+    ),
+    repeating-linear-gradient(
+      138deg,
+      transparent 0px, transparent 130px,
+      rgba(196,181,219,0.05) 130px, rgba(196,181,219,0.05) 131px
+    );
 }

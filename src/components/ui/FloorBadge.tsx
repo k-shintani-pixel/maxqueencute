@@ -4,17 +4,12 @@ type Props = {
 };
 
 export function FloorBadge({ floor, className = '' }: Props) {
-  const isSecondFloor = floor === '2F';
+  const isSecond = floor === '2F';
+  const color = isSecond ? '#8A6AAB' : '#D4AF37';
 
   return (
-    <div
-      className={`inline-flex items-center justify-center ${className}`}
-      aria-label={`${isSecondFloor ? '2' : '1'}階`}
-    >
-      <span
-        className="font-script text-4xl md:text-5xl leading-none"
-        style={{ color: isSecondFloor ? '#7C6B95' : '#B8945F' }}
-      >
+    <div className={`inline-flex items-center justify-center ${className}`} aria-label={`${isSecond ? '2' : '1'}階`}>
+      <span className="font-script text-4xl md:text-5xl leading-none" style={{ color }}>
         {floor}
       </span>
     </div>

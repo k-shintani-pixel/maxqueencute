@@ -14,19 +14,24 @@ type AnchorProps = BaseProps & AnchorHTMLAttributes<HTMLAnchorElement> & { href:
 type Props = ButtonProps | AnchorProps;
 
 const baseStyles =
-  'inline-flex items-center justify-center font-serif-display tracking-widest transition-all duration-300 cursor-pointer select-none';
+  'inline-flex items-center justify-center font-serif-display tracking-widest cursor-pointer select-none rounded-sm';
 
-const variants = {
+const variants: Record<NonNullable<BaseProps['variant']>, string> = {
+  /* Gold metallic shimmer — uses .btn-gold from globals.css */
   primary:
-    'bg-gold-light text-base border border-gold-light hover:bg-gold-dark hover:border-gold-dark text-white px-8 py-3',
+    'btn-gold text-white px-8 py-3 rounded-sm',
+  /* Accent purple */
   secondary:
-    'bg-accent-dark text-base border border-accent-dark hover:bg-accent-light hover:border-accent-light text-white px-8 py-3',
+    'bg-accent-dark text-white border border-accent-dark rounded-sm px-8 py-3 ' +
+    'hover:bg-accent-mid hover:border-accent-mid transition-all duration-300',
+  /* Gold outline + hover shimmer */
   outline:
-    'bg-transparent text-text-primary border border-gold-light hover:bg-gold-light/10 px-8 py-3',
-  ghost: 'bg-transparent text-text-secondary hover:text-gold-light underline underline-offset-4',
+    'btn-outline-gold px-8 py-3 rounded-sm',
+  ghost:
+    'bg-transparent text-text-secondary hover:text-gold-light underline underline-offset-4 transition-colors duration-200',
 };
 
-const sizes = {
+const sizes: Record<NonNullable<BaseProps['size']>, string> = {
   sm: 'text-xs px-5 py-2',
   md: 'text-sm px-8 py-3',
   lg: 'text-base px-10 py-4',

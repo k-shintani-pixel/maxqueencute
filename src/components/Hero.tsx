@@ -3,84 +3,118 @@
 import { motion } from 'framer-motion';
 import { siteConfig } from '@/config/site';
 
+/* Gold accent used throughout Hero */
+const GOLD = '#D4AF37';
+const GOLD_DIM = 'rgba(212,175,55,0.5)';
+
 export function Hero() {
   return (
     <section
       className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden"
       aria-label="ファーストビュー"
     >
-      {/* Background gradient */}
+      {/* ── Deep royal purple → lavender → cream gradient ── */}
       <div
         className="absolute inset-0"
         style={{
           background:
-            'linear-gradient(160deg, #C4B5DB 0%, #E8DEFA 25%, #FAF6F0 55%, #F0E9DC 100%)',
+            'linear-gradient(160deg, #1C0A32 0%, #3A1C6A 22%, #6B4A9B 44%, #C4B5DB 64%, #EDE6FA 78%, #FAF6F0 90%, #F0E9DC 100%)',
         }}
         aria-hidden="true"
       />
 
-      {/* Subtle texture overlay */}
+      {/* ── Marble-vein overlay on dark section ── */}
       <div
-        className="absolute inset-0 opacity-30"
+        className="absolute inset-0 opacity-[0.07]"
         style={{
-          backgroundImage:
-            'radial-gradient(circle at 20% 80%, #C4B5DB22 0%, transparent 50%), radial-gradient(circle at 80% 20%, #B8945F11 0%, transparent 50%)',
+          backgroundImage: [
+            'repeating-linear-gradient(108deg,transparent 0,transparent 55px,rgba(255,255,255,0.6) 55px,rgba(255,255,255,0.6) 56px)',
+            'repeating-linear-gradient(75deg,transparent 0,transparent 95px,rgba(212,175,55,0.5) 95px,rgba(212,175,55,0.5) 96px)',
+          ].join(','),
         }}
         aria-hidden="true"
       />
 
-      {/* Decorative outer border SVG */}
+      {/* ── Radial glow accents ── */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage: [
+            'radial-gradient(ellipse 60% 40% at 15% 85%, rgba(212,175,55,0.12) 0%, transparent 60%)',
+            'radial-gradient(ellipse 50% 35% at 85% 15%, rgba(196,181,219,0.18) 0%, transparent 60%)',
+          ].join(','),
+        }}
+        aria-hidden="true"
+      />
+
+      {/* ── Decorative outer border ── */}
       <div className="absolute inset-4 md:inset-8 pointer-events-none" aria-hidden="true">
         <svg
           className="w-full h-full"
           viewBox="0 0 100 100"
           preserveAspectRatio="none"
           fill="none"
-          xmlns="http://www.w3.org/2000/svg"
         >
-          <rect x="0.5" y="0.5" width="99" height="99" stroke="#B8945F" strokeWidth="0.2" fill="none" />
-          <rect x="2" y="2" width="96" height="96" stroke="#B8945F" strokeWidth="0.1" fill="none" />
-          {/* Corner flourishes */}
-          <path d="M0.5 10 L0.5 0.5 L10 0.5" stroke="#B8945F" strokeWidth="0.4" fill="none" />
-          <path d="M90 0.5 L99.5 0.5 L99.5 10" stroke="#B8945F" strokeWidth="0.4" fill="none" />
-          <path d="M0.5 90 L0.5 99.5 L10 99.5" stroke="#B8945F" strokeWidth="0.4" fill="none" />
-          <path d="M90 99.5 L99.5 99.5 L99.5 90" stroke="#B8945F" strokeWidth="0.4" fill="none" />
+          <rect x="0.5" y="0.5" width="99" height="99" stroke={GOLD} strokeWidth="0.2" opacity="0.7" />
+          <rect x="2"   y="2"   width="96" height="96" stroke={GOLD} strokeWidth="0.1" opacity="0.4" />
+          {/* Corner L-flourishes */}
+          <path d="M0.5 12 L0.5 0.5 L12 0.5"   stroke={GOLD} strokeWidth="0.5" opacity="0.9" />
+          <path d="M88 0.5 L99.5 0.5 L99.5 12" stroke={GOLD} strokeWidth="0.5" opacity="0.9" />
+          <path d="M0.5 88 L0.5 99.5 L12 99.5"  stroke={GOLD} strokeWidth="0.5" opacity="0.9" />
+          <path d="M88 99.5 L99.5 99.5 L99.5 88" stroke={GOLD} strokeWidth="0.5" opacity="0.9" />
         </svg>
       </div>
 
-      {/* Main content */}
+      {/* ── Main content ── */}
       <div className="relative z-10 flex flex-col items-center text-center px-8">
-        {/* MaxQueenCute */}
+
+        {/* MaxQueenCute — white on dark section */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 32 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.2, ease: [0.25, 0.46, 0.45, 0.94] }}
+          transition={{ duration: 1.3, ease: [0.25, 0.46, 0.45, 0.94] }}
         >
-          <h1 className="font-script text-6xl sm:text-7xl md:text-8xl lg:text-9xl text-text-primary leading-none">
+          <h1
+            className="font-script leading-none"
+            style={{
+              fontSize: 'clamp(3.5rem, 10vw, 8rem)',
+              color: '#FAF6F0',
+              textShadow: `0 2px 40px rgba(45,24,84,0.5), 0 0 80px rgba(212,175,55,0.15)`,
+            }}
+          >
             {siteConfig.salons.maxqueencute.name}
           </h1>
         </motion.div>
 
-        {/* Decorative line */}
+        {/* Gold rule */}
         <motion.div
           initial={{ opacity: 0, scaleX: 0 }}
           animate={{ opacity: 1, scaleX: 1 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="flex items-center gap-3 my-4"
+          transition={{ duration: 0.9, delay: 0.4 }}
+          className="flex items-center gap-4 my-4"
           aria-hidden="true"
         >
-          <span className="w-16 h-px bg-gold-light block" />
-          <span className="font-serif-display text-gold-light text-xs tracking-widest">×</span>
-          <span className="w-16 h-px bg-gold-light block" />
+          <span className="block h-px w-20" style={{ background: `linear-gradient(90deg, transparent, ${GOLD})` }} />
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+            <path d="M6 0 L7.2 4.8 L12 6 L7.2 7.2 L6 12 L4.8 7.2 L0 6 L4.8 4.8 Z" fill={GOLD} />
+          </svg>
+          <span className="block h-px w-20" style={{ background: `linear-gradient(90deg, ${GOLD}, transparent)` }} />
         </motion.div>
 
         {/* Nail salon Ruri */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 28 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.2, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
+          transition={{ duration: 1.2, delay: 0.25, ease: [0.25, 0.46, 0.45, 0.94] }}
         >
-          <p className="font-script text-4xl sm:text-5xl md:text-6xl text-text-secondary leading-none">
+          <p
+            className="font-script leading-none"
+            style={{
+              fontSize: 'clamp(2rem, 6vw, 5rem)',
+              color: 'rgba(250,246,240,0.78)',
+              textShadow: '0 2px 20px rgba(45,24,84,0.4)',
+            }}
+          >
             {siteConfig.salons.ruri.name}
           </p>
         </motion.div>
@@ -89,37 +123,41 @@ export function Hero() {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 0.6 }}
-          className="mt-4"
+          transition={{ duration: 1.0, delay: 0.65 }}
+          className="mt-5"
         >
-          <p className="font-serif-display text-xs md:text-sm tracking-[0.4em] text-text-secondary/70 uppercase">
+          <p
+            className="font-serif-display text-xs md:text-sm tracking-[0.45em] uppercase"
+            style={{ color: GOLD_DIM }}
+          >
             {siteConfig.school.name}
           </p>
         </motion.div>
 
-        {/* Divider ornament */}
+        {/* Ornament divider */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 0.8 }}
-          className="my-6 md:my-8"
+          transition={{ duration: 1, delay: 0.9 }}
+          className="my-7 md:my-9"
           aria-hidden="true"
         >
-          <svg width="120" height="16" viewBox="0 0 120 16" fill="none">
-            <line x1="0" y1="8" x2="48" y2="8" stroke="#B8945F" strokeWidth="0.5" />
-            <path d="M54 8 L58 4 L62 8 L58 12 Z" fill="#B8945F" />
-            <path d="M48 8 L52 5 L56 8 L52 11 Z" fill="none" stroke="#B8945F" strokeWidth="0.7" />
-            <path d="M64 8 L68 5 L72 8 L68 11 Z" fill="none" stroke="#B8945F" strokeWidth="0.7" />
-            <line x1="72" y1="8" x2="120" y2="8" stroke="#B8945F" strokeWidth="0.5" />
+          <svg width="140" height="18" viewBox="0 0 140 18" fill="none">
+            <line x1="0"   y1="9" x2="54" y2="9" stroke={GOLD} strokeWidth="0.5" opacity="0.7" />
+            <path d="M58 9 L62 5 L66 9 L62 13 Z" fill="none" stroke={GOLD} strokeWidth="0.8" opacity="0.6" />
+            <path d="M64 9 L70 4 L76 9 L70 14 Z" fill={GOLD} />
+            <path d="M74 9 L78 5 L82 9 L78 13 Z" fill="none" stroke={GOLD} strokeWidth="0.8" opacity="0.6" />
+            <line x1="86" y1="9" x2="140" y2="9" stroke={GOLD} strokeWidth="0.5" opacity="0.7" />
           </svg>
         </motion.div>
 
-        {/* Catchphrase */}
+        {/* Catchphrase — Noto Serif JP */}
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 1.0, ease: [0.25, 0.46, 0.45, 0.94] }}
-          className="font-jp text-base md:text-lg text-text-primary tracking-widest leading-loose"
+          transition={{ duration: 1.0, delay: 1.1, ease: [0.25, 0.46, 0.45, 0.94] }}
+          className="font-jp text-base md:text-lg tracking-[0.18em] leading-loose"
+          style={{ color: 'rgba(250,246,240,0.88)' }}
         >
           {siteConfig.catchphrase}
         </motion.p>
@@ -128,31 +166,32 @@ export function Hero() {
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1.2 }}
-          className="font-serif-display text-xs tracking-[0.3em] text-text-secondary/60 mt-4 uppercase"
+          transition={{ duration: 1, delay: 1.3 }}
+          className="font-serif-display text-xs tracking-[0.35em] mt-4 uppercase"
+          style={{ color: 'rgba(212,175,55,0.5)' }}
         >
           Urayasu, Chiba
         </motion.p>
       </div>
 
-      {/* Scroll indicator */}
+      {/* ── Scroll indicator ── */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 1.8 }}
+        transition={{ duration: 1, delay: 2.0 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
         aria-hidden="true"
       >
-        <span className="font-serif-display text-xs tracking-[0.3em] text-text-secondary/50 uppercase">
+        <span className="font-serif-display text-xs tracking-[0.35em] uppercase" style={{ color: 'rgba(212,175,55,0.45)' }}>
           scroll
         </span>
         <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+          animate={{ y: [0, 9, 0] }}
+          transition={{ duration: 2.2, repeat: Infinity, ease: 'easeInOut' }}
         >
-          <svg width="16" height="24" viewBox="0 0 16 24" fill="none">
-            <line x1="8" y1="0" x2="8" y2="18" stroke="#B8945F" strokeWidth="0.8" />
-            <path d="M2 12 L8 20 L14 12" stroke="#B8945F" strokeWidth="0.8" fill="none" />
+          <svg width="16" height="26" viewBox="0 0 16 26" fill="none">
+            <line x1="8" y1="0" x2="8" y2="20" stroke={GOLD} strokeWidth="0.8" opacity="0.6" />
+            <path d="M2 14 L8 22 L14 14" stroke={GOLD} strokeWidth="0.8" fill="none" opacity="0.6" />
           </svg>
         </motion.div>
       </motion.div>

@@ -3,70 +3,61 @@ import { type HTMLAttributes } from 'react';
 type Props = HTMLAttributes<HTMLDivElement> & {
   children: React.ReactNode;
   className?: string;
-  variant?: 'default' | 'salon' | 'gallery' | 'light';
+  /** default: gold antique | salon: same | gallery: purple | light: soft purple | glass: glassmorphism */
+  variant?: 'default' | 'salon' | 'gallery' | 'light' | 'glass';
+};
+
+const borderColors: Record<NonNullable<Props['variant']>, string> = {
+  default: '#D4AF37',
+  salon:   '#D4AF37',
+  gallery: '#C4B5DB',
+  light:   '#C4B5DB',
+  glass:   'rgba(212,175,55,0.4)',
 };
 
 export function Frame({ children, className = '', variant = 'default', style, ...rest }: Props) {
-  const borderColor =
-    variant === 'salon'
-      ? '#B8945F'
-      : variant === 'gallery'
-        ? '#C4B5DB'
-        : variant === 'light'
-          ? '#C4B5DB'
-          : '#B8945F';
+  const bc = borderColors[variant];
+  const isGlass = variant === 'glass';
 
   return (
-    <div className={`relative ${className}`} style={style} {...rest}>
-      {/* Corner decorations */}
-      <svg
-        className="absolute top-0 left-0 w-12 h-12 pointer-events-none"
-        viewBox="0 0 48 48"
-        fill="none"
-        aria-hidden="true"
-      >
-        <path d="M4 44 L4 4 L44 4" stroke={borderColor} strokeWidth="1" fill="none" />
-        <path d="M4 4 L12 4 M4 4 L4 12" stroke={borderColor} strokeWidth="0.5" fill="none" />
-        <circle cx="4" cy="4" r="2" fill={borderColor} />
+    <div
+      className={`relative rounded-sm ${isGlass ? 'glass-card' : ''} ${className}`}
+      style={style}
+      {...rest}
+    >
+      {/* ── Corner decorations ── */}
+      {/* Top-left */}
+      <svg className="absolute top-0 left-0 w-10 h-10 pointer-events-none" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <path d="M3 37 L3 3 L37 3"  stroke={bc} strokeWidth="1"   fill="none" />
+        <path d="M3 3 L10 3 M3 3 L3 10" stroke={bc} strokeWidth="0.5" fill="none" />
+        <circle cx="3" cy="3" r="1.5" fill={bc} />
       </svg>
-      <svg
-        className="absolute top-0 right-0 w-12 h-12 pointer-events-none"
-        viewBox="0 0 48 48"
-        fill="none"
-        aria-hidden="true"
-      >
-        <path d="M44 44 L44 4 L4 4" stroke={borderColor} strokeWidth="1" fill="none" />
-        <path d="M44 4 L36 4 M44 4 L44 12" stroke={borderColor} strokeWidth="0.5" fill="none" />
-        <circle cx="44" cy="4" r="2" fill={borderColor} />
+      {/* Top-right */}
+      <svg className="absolute top-0 right-0 w-10 h-10 pointer-events-none" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <path d="M37 37 L37 3 L3 3"  stroke={bc} strokeWidth="1"   fill="none" />
+        <path d="M37 3 L30 3 M37 3 L37 10" stroke={bc} strokeWidth="0.5" fill="none" />
+        <circle cx="37" cy="3" r="1.5" fill={bc} />
       </svg>
-      <svg
-        className="absolute bottom-0 left-0 w-12 h-12 pointer-events-none"
-        viewBox="0 0 48 48"
-        fill="none"
-        aria-hidden="true"
-      >
-        <path d="M4 4 L4 44 L44 44" stroke={borderColor} strokeWidth="1" fill="none" />
-        <path d="M4 44 L12 44 M4 44 L4 36" stroke={borderColor} strokeWidth="0.5" fill="none" />
-        <circle cx="4" cy="44" r="2" fill={borderColor} />
+      {/* Bottom-left */}
+      <svg className="absolute bottom-0 left-0 w-10 h-10 pointer-events-none" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <path d="M3 3 L3 37 L37 37"  stroke={bc} strokeWidth="1"   fill="none" />
+        <path d="M3 37 L10 37 M3 37 L3 30" stroke={bc} strokeWidth="0.5" fill="none" />
+        <circle cx="3" cy="37" r="1.5" fill={bc} />
       </svg>
-      <svg
-        className="absolute bottom-0 right-0 w-12 h-12 pointer-events-none"
-        viewBox="0 0 48 48"
-        fill="none"
-        aria-hidden="true"
-      >
-        <path d="M44 4 L44 44 L4 44" stroke={borderColor} strokeWidth="1" fill="none" />
-        <path d="M44 44 L36 44 M44 44 L44 36" stroke={borderColor} strokeWidth="0.5" fill="none" />
-        <circle cx="44" cy="44" r="2" fill={borderColor} />
+      {/* Bottom-right */}
+      <svg className="absolute bottom-0 right-0 w-10 h-10 pointer-events-none" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <path d="M37 3 L37 37 L3 37"  stroke={bc} strokeWidth="1"   fill="none" />
+        <path d="M37 37 L30 37 M37 37 L37 30" stroke={bc} strokeWidth="0.5" fill="none" />
+        <circle cx="37" cy="37" r="1.5" fill={bc} />
       </svg>
 
-      {/* Inner border */}
+      {/* ── Inner inset border ── */}
       <div
-        className="absolute inset-3 pointer-events-none"
-        style={{ border: `0.5px solid ${borderColor}`, opacity: 0.4 }}
+        className="absolute inset-3 pointer-events-none rounded-sm"
+        style={{ border: `0.5px solid ${bc}`, opacity: isGlass ? 0.3 : 0.35 }}
       />
 
-      {/* Content */}
+      {/* ── Content ── */}
       <div className="relative">{children}</div>
     </div>
   );

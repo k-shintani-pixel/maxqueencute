@@ -25,12 +25,20 @@ export function Header() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled ? 'bg-base/95 backdrop-blur-sm shadow-sm' : 'bg-transparent'
+        scrolled
+          ? 'backdrop-blur-md shadow-sm border-b border-gold-light/10'
+          : 'bg-transparent'
       }`}
+      style={scrolled ? { background: 'rgba(45,24,84,0.75)' } : undefined}
     >
       <div className="max-w-6xl mx-auto px-4 md:px-8 h-16 flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className="font-script text-2xl text-text-primary leading-none" aria-label="トップに戻る">
+        <a
+          href="#"
+          className="font-script text-2xl leading-none transition-colors duration-300"
+          style={{ color: scrolled ? '#FAF6F0' : '#2A1F14' }}
+          aria-label="トップに戻る"
+        >
           {siteConfig.salons.maxqueencute.name}
         </a>
 
@@ -40,7 +48,10 @@ export function Header() {
             <a
               key={item.href}
               href={item.href}
-              className="font-serif-display text-xs tracking-widest text-text-secondary hover:text-gold-light transition-colors uppercase"
+              className="font-serif-display text-xs tracking-widest uppercase transition-colors duration-300"
+              style={{ color: scrolled ? 'rgba(250,246,240,0.65)' : '#5A4535' }}
+              onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = '#D4AF37'; }}
+              onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = scrolled ? 'rgba(250,246,240,0.65)' : '#5A4535'; }}
             >
               {item.label}
             </a>
@@ -49,7 +60,7 @@ export function Header() {
             href={siteConfig.reservation.hpbUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="font-serif-display text-xs tracking-widest border border-gold-light text-text-primary px-4 py-2 hover:bg-gold-light/10 transition-colors"
+            className="btn-gold font-serif-display text-xs tracking-widest px-5 py-2 rounded-sm"
           >
             Reserve
           </a>
@@ -62,27 +73,31 @@ export function Header() {
           aria-label={menuOpen ? 'メニューを閉じる' : 'メニューを開く'}
           aria-expanded={menuOpen}
         >
-          <span
-            className={`block w-5 h-px bg-text-primary transition-transform duration-300 ${menuOpen ? 'rotate-45 translate-y-2' : ''}`}
-          />
-          <span
-            className={`block w-5 h-px bg-text-primary transition-opacity duration-300 ${menuOpen ? 'opacity-0' : ''}`}
-          />
-          <span
-            className={`block w-5 h-px bg-text-primary transition-transform duration-300 ${menuOpen ? '-rotate-45 -translate-y-2' : ''}`}
-          />
+          {(['rotate-45 translate-y-2', 'opacity-0', '-rotate-45 -translate-y-2'] as const).map((cls, i) => (
+            <span
+              key={i}
+              className={`block w-5 h-px transition-all duration-300 ${menuOpen ? cls : ''}`}
+              style={{ background: scrolled ? '#FAF6F0' : '#2A1F14' }}
+            />
+          ))}
         </button>
       </div>
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden bg-base/98 backdrop-blur-sm border-t border-accent-light/30">
+        <div
+          className="md:hidden backdrop-blur-md border-t"
+          style={{ background: 'rgba(28,10,50,0.92)', borderColor: 'rgba(212,175,55,0.2)' }}
+        >
           <nav className="flex flex-col py-4" aria-label="モバイルナビゲーション">
             {navItems.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
-                className="font-serif-display text-sm tracking-widest text-text-secondary hover:text-gold-light px-6 py-3 transition-colors uppercase"
+                className="font-serif-display text-sm tracking-widest px-6 py-3 uppercase transition-colors duration-200"
+                style={{ color: 'rgba(250,246,240,0.7)' }}
+                onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = '#D4AF37'; }}
+                onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(250,246,240,0.7)'; }}
                 onClick={() => setMenuOpen(false)}
               >
                 {item.label}
@@ -92,7 +107,7 @@ export function Header() {
               href={siteConfig.reservation.hpbUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-serif-display text-sm tracking-widest text-text-primary border border-gold-light mx-6 my-2 px-4 py-3 text-center hover:bg-gold-light/10 transition-colors"
+              className="btn-gold font-serif-display text-sm tracking-widest mx-6 my-3 px-4 py-3 text-center rounded-sm"
               onClick={() => setMenuOpen(false)}
             >
               Reserve
