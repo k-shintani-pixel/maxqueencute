@@ -43,7 +43,7 @@ export function School() {
         className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden"
         aria-hidden="true"
       >
-        <span className="font-script text-[16vw] leading-none opacity-[0.03] text-ink">
+        <span className="font-script text-[16vw] leading-none opacity-[0.03]" style={{ color: '#2A1F14' }}>
           School
         </span>
       </div>
@@ -56,14 +56,15 @@ export function School() {
           </p>
           <h2
             id="school-heading"
-            className="font-script text-5xl md:text-7xl text-ink text-center leading-tight mb-4"
+            className="font-script text-5xl md:text-7xl text-center leading-tight mb-4"
+            style={{ color: '#2A1F14' }}
           >
             {siteConfig.school.name}
           </h2>
-          <p className="font-jp text-sm text-ink-sub text-center tracking-wide mb-4">
+          <p className="font-jp text-sm text-center tracking-wide mb-4" style={{ color: '#5A4535' }}>
             代表講師：{siteConfig.school.representative}
           </p>
-          <p className="font-jp text-sm text-ink-sub/70 text-center max-w-xl mx-auto mb-16 leading-loose">
+          <p className="font-jp text-sm text-center max-w-xl mx-auto mb-16 leading-loose" style={{ color: 'rgba(90,69,53,0.7)' }}>
             {siteConfig.school.description}
             <br />
             技術を、愛を、次の世代へ。
@@ -88,12 +89,12 @@ export function School() {
                     <span className="text-accent-dark text-xs" aria-hidden="true">✦</span>
                   </div>
                 )}
-                <h3 className="font-serif-display text-base md:text-lg tracking-wider text-ink mb-2">
+                <h3 className="font-serif-display text-base md:text-lg tracking-wider mb-2" style={{ color: '#2A1F14' }}>
                   {course.title}
                 </h3>
                 <p className="font-script text-2xl text-gold-light mb-3">{course.detail}</p>
                 {course.note && (
-                  <p className="font-jp text-xs text-ink-sub/60 leading-relaxed">{course.note}</p>
+                  <p className="font-jp text-xs leading-relaxed" style={{ color: 'rgba(90,69,53,0.6)' }}>{course.note}</p>
                 )}
               </Frame>
             </FadeIn>
@@ -104,7 +105,7 @@ export function School() {
         <FadeIn delay={0.3}>
           <div className="text-center">
             <Frame variant="light" className="inline-block px-8 md:px-16 py-8 md:py-10">
-              <p className="font-jp text-sm md:text-base text-ink leading-loose mb-6">
+              <p className="font-jp text-sm md:text-base leading-loose mb-6" style={{ color: '#2A1F14' }}>
                 ご興味のある方は、LINEまたはInstagramより
                 <br />
                 お気軽にメッセージをお寄せください。
