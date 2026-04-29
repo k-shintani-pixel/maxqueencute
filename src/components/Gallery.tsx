@@ -1,20 +1,46 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import { FadeIn } from '@/components/ui/FadeIn';
 import { Divider } from '@/components/ui/Divider';
-import { galleryImages } from '@/config/gallery';
+import { galleryImages, type GalleryImage } from '@/config/gallery';
 import { siteConfig } from '@/config/site';
 
 type Tab = 'maxqueencute' | 'ruri';
 
-function GalleryPlaceholder({ index, label }: { index: number; label: string }) {
+function PlaceholderContent({ label, index }: { label: string; index: number }) {
   return (
     <div
-      className="relative aspect-square overflow-hidden"
+      className="absolute inset-0 flex flex-col items-center justify-center gap-2"
       role="img"
       aria-label={`${label} ネイルデザイン ${index + 1}（Coming Soon）`}
     >
+      <div
+        className="absolute inset-0"
+        style={{ background: 'linear-gradient(135deg, #FDE8EE 0%, #FDF2F4 50%, #FADADD 100%)' }}
+        aria-hidden="true"
+      />
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true" className="relative z-10">
+        <path
+          d="M12 2 L13.5 8 L20 8 L14.5 11.5 L16.5 18 L12 14 L7.5 18 L9.5 11.5 L4 8 L10.5 8 Z"
+          stroke="#C4B5DB"
+          strokeWidth="0.8"
+          fill="none"
+        />
+      </svg>
+      <span className="font-script text-lg relative z-10" style={{ color: 'rgba(139,34,82,0.35)' }}>
+        Coming Soon
+      </span>
+    </div>
+  );
+}
+
+function GalleryItem({ image, index, label }: { image: GalleryImage; index: number; label: string }) {
+  const [hasError, setHasError] = useState(false);
+
+  return (
+    <div className="relative aspect-square overflow-hidden">
       {/* Corner bracket overlay */}
       <div className="absolute inset-0 pointer-events-none z-10" aria-hidden="true">
         <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none" fill="none">
@@ -26,27 +52,18 @@ function GalleryPlaceholder({ index, label }: { index: number; label: string }) 
         </svg>
       </div>
 
-      {/* Placeholder background */}
-      <div
-        className="absolute inset-0"
-        style={{ background: 'linear-gradient(135deg, #FDE8EE 0%, #FDF2F4 50%, #FADADD 100%)' }}
-        aria-hidden="true"
-      />
-
-      {/* Content */}
-      <div className="absolute inset-0 flex flex-col items-center justify-center gap-2">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <path
-            d="M12 2 L13.5 8 L20 8 L14.5 11.5 L16.5 18 L12 14 L7.5 18 L9.5 11.5 L4 8 L10.5 8 Z"
-            stroke="#C4B5DB"
-            strokeWidth="0.8"
-            fill="none"
-          />
-        </svg>
-        <span className="font-script text-lg" style={{ color: 'rgba(139,34,82,0.35)' }}>
-          Coming Soon
-        </span>
-      </div>
+      {hasError ? (
+        <PlaceholderContent label={label} index={index} />
+      ) : (
+        <Image
+          src={image.src}
+          alt={image.alt}
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 50vw, 33vw"
+          onError={() => setHasError(true)}
+        />
+      )}
     </div>
   );
 }
@@ -66,7 +83,7 @@ function GalleryGrid({ salon, salonLabel, instagramUrl, instagramHandle }: Galle
       <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 mb-6">
         {images.map((image, i) => (
           <FadeIn key={image.id} delay={i * 0.06}>
-            <GalleryPlaceholder index={i} label={salonLabel} />
+            <GalleryItem image={image} index={i} label={salonLabel} />
           </FadeIn>
         ))}
       </div>
