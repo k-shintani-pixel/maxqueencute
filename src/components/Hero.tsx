@@ -18,7 +18,7 @@ export function Hero() {
         className="absolute inset-0"
         style={{
           background:
-            'linear-gradient(160deg, #3D0A1E 0%, #7B1A3C 20%, #C05070 42%, #EDA8BB 62%, #FDE8EE 80%, #FDF2F4 92%, #FFFFFF 100%)',
+            'linear-gradient(160deg, #C04070 0%, #E08090 22%, #F0B0C4 44%, #FAD8E4 65%, #FDE8EE 82%, #FDF2F4 93%, #FFFFFF 100%)',
         }}
         aria-hidden="true"
       />
@@ -79,7 +79,7 @@ export function Hero() {
             style={{
               fontSize: 'clamp(3.5rem, 10vw, 8rem)',
               color: '#FDF2F4',
-              textShadow: `0 2px 40px rgba(61,10,30,0.5), 0 0 80px rgba(212,175,55,0.15)`,
+              textShadow: `0 2px 24px rgba(139,34,82,0.35), 0 0 60px rgba(212,175,55,0.12)`,
             }}
           >
             {siteConfig.salons.maxqueencute.name}
@@ -112,7 +112,7 @@ export function Hero() {
             style={{
               fontSize: 'clamp(2rem, 6vw, 5rem)',
               color: 'rgba(253,242,244,0.82)',
-              textShadow: '0 2px 20px rgba(61,10,30,0.4)',
+              textShadow: '0 2px 16px rgba(139,34,82,0.28)',
             }}
           >
             {siteConfig.salons.ruri.name}
