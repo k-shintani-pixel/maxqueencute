@@ -108,6 +108,12 @@ export function InstagramFeed() {
               instagramUrl={siteConfig.salons.ruri.instagramUrl}
               tagline={siteConfig.salons.ruri.tagline}
               accentClass="text-gold-light"
+              embedContent={
+                <div
+                  className="elfsight-app-b75b054a-51bf-4ed1-922f-5eced02826a3"
+                  data-elfsight-app-lazy
+                />
+              }
             />
           </FadeIn>
         </div>
