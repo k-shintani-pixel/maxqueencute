@@ -4,7 +4,6 @@ import { Divider } from '@/components/ui/Divider';
 /* 色を Tailwind クラスに依存せず直接指定（Tailwind v4 の --color-text-* クラス生成の不確実性を回避） */
 const COLOR_PRIMARY   = '#3D2B2B';
 const COLOR_SECONDARY = '#6B4E4E';
-const COLOR_MUTED     = 'rgba(107, 78, 78, 0.45)';
 
 export function Concept() {
   return (
@@ -101,12 +100,6 @@ export function Concept() {
                 技術は、時を超えて積み重なります。
                 トレンドを追いながらも、爪そのものを守る。
                 そのバランスを、私たちは誇りをもって届けています。
-              </p>
-              <p
-                className="font-serif-display text-xs italic tracking-wider"
-                style={{ color: COLOR_MUTED }}
-              >
-                ※ 文章は後日差し替え予定のサンプルテキストです。
               </p>
             </div>
           </FadeIn>
