@@ -134,7 +134,7 @@ export function Hero() {
             <span style={{ color: 'rgba(253,242,244,0.7)', fontSize: '0.55rem' }} aria-hidden="true">✦</span>
             <p
               className="font-serif-display text-xs tracking-[0.4em] uppercase"
-              style={{ color: 'rgba(253,242,244,0.88)' }}
+              style={{ color: '#000000' }}
             >
               {siteConfig.school.name}
             </p>
@@ -165,7 +165,7 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.0, delay: 1.1, ease: [0.25, 0.46, 0.45, 0.94] }}
           className="font-jp text-base md:text-lg tracking-[0.18em] leading-loose"
-          style={{ color: 'rgba(250,246,240,0.88)' }}
+          style={{ color: '#000000' }}
         >
           {siteConfig.catchphrase}
         </motion.p>
