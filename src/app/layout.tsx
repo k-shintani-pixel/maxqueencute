@@ -71,6 +71,7 @@ export default function RootLayout({
       <body>
         {children}
         <Script src="https://www.instagram.com/embed.js" strategy="lazyOnload" />
+        <Script src="https://elfsightcdn.com/platform.js" strategy="lazyOnload" />
       </body>
     </html>
   );

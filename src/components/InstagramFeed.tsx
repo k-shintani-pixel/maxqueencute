@@ -10,6 +10,7 @@ type InstagramColumnProps = {
   instagramUrl: string;
   tagline: string;
   accentClass?: string;
+  embedContent?: React.ReactNode;
 };
 
 function InstagramColumn({
@@ -18,6 +19,7 @@ function InstagramColumn({
   instagramUrl,
   tagline,
   accentClass = 'text-accent-dark',
+  embedContent,
 }: InstagramColumnProps) {
   return (
     <div className="flex flex-col">
@@ -28,18 +30,19 @@ function InstagramColumn({
         <p className="font-jp text-xs text-ink-sub/60 mt-2">{tagline}</p>
       </div>
 
-      {/* Embed placeholder */}
-      <div
-        className="flex-1 min-h-64 border border-accent-light/40 flex flex-col items-center justify-center gap-3 p-6 bg-secondary/30"
-        aria-label={`${salonName} Instagramフィード（埋め込み予定）`}
-      >
-        <InstagramIcon size={32} className="text-accent-light" aria-hidden={true} />
-        <p className="font-jp text-xs text-ink-sub/50 text-center leading-relaxed">
-          {/* ここに SnapWidget 等の Instagram 埋め込みコードを貼り付けてください */}
-          Instagramフィード埋め込みエリア
-          <br />
-          <span className="text-xs opacity-70">（SnapWidget等のコードをここに追加）</span>
-        </p>
+      {/* Embed area */}
+      <div className="flex-1">
+        {embedContent ?? (
+          <div
+            className="min-h-64 border border-accent-light/40 flex flex-col items-center justify-center gap-3 p-6 bg-secondary/30"
+            aria-label={`${salonName} Instagramフィード（埋め込み予定）`}
+          >
+            <InstagramIcon size={32} className="text-accent-light" aria-hidden={true} />
+            <p className="font-jp text-xs text-ink-sub/50 text-center leading-relaxed">
+              Instagramフィード埋め込みエリア
+            </p>
+          </div>
+        )}
       </div>
 
       {/* Follow button */}
@@ -90,6 +93,12 @@ export function InstagramFeed() {
               instagramUrl={siteConfig.salons.maxqueencute.instagramUrl}
               tagline={siteConfig.salons.maxqueencute.tagline}
               accentClass="text-accent-dark"
+              embedContent={
+                <div
+                  className="elfsight-app-8b887de3-59fb-4c6c-ac99-b7a4992409c0"
+                  data-elfsight-app-lazy
+                />
+              }
             />
           </FadeIn>
           <FadeIn delay={0.2} direction="left">
