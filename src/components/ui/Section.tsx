@@ -30,9 +30,9 @@ export function SectionTitle({
 }) {
   return (
     <div className={`text-center mb-12 md:mb-16 ${className}`}>
-      <h2 className="font-script text-5xl md:text-6xl text-text-primary leading-tight">{children}</h2>
+      <h2 className="font-script text-5xl md:text-6xl text-ink leading-tight">{children}</h2>
       {subtitle && (
-        <p className="font-serif-display text-sm md:text-base tracking-[0.3em] text-text-secondary mt-3 uppercase">
+        <p className="font-serif-display text-sm md:text-base tracking-[0.3em] text-ink-sub mt-3 uppercase">
           {subtitle}
         </p>
       )}

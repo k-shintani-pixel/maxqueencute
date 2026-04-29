@@ -28,7 +28,7 @@ const variants: Record<NonNullable<BaseProps['variant']>, string> = {
   outline:
     'btn-outline-gold px-8 py-3 rounded-sm',
   ghost:
-    'bg-transparent text-text-secondary hover:text-gold-light underline underline-offset-4 transition-colors duration-200',
+    'bg-transparent text-ink-sub hover:text-gold-light underline underline-offset-4 transition-colors duration-200',
 };
 
 const sizes: Record<NonNullable<BaseProps['size']>, string> = {

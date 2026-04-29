@@ -43,13 +43,13 @@ export function Access() {
       label: 'お支払い',
       value: (
         <div>
-          <span className="inline-block bg-text-primary text-base text-xs px-2 py-0.5 font-serif-display tracking-wider mb-2">
+          <span className="inline-block bg-ink text-base text-xs px-2 py-0.5 font-serif-display tracking-wider mb-2">
             現金不可
           </span>
-          <p className="font-jp text-sm text-text-secondary">{access.payment}</p>
+          <p className="font-jp text-sm text-ink-sub">{access.payment}</p>
           <ul className="mt-1 space-y-0.5">
             {access.paymentMethods.map((method) => (
-              <li key={method} className="font-jp text-xs text-text-secondary/60">
+              <li key={method} className="font-jp text-xs text-ink-sub/60">
                 ・{method}
               </li>
             ))}
@@ -74,7 +74,7 @@ export function Access() {
           </p>
           <h2
             id="access-heading"
-            className="font-script text-5xl md:text-6xl text-text-primary text-center leading-tight mb-12"
+            className="font-script text-5xl md:text-6xl text-ink text-center leading-tight mb-12"
           >
             アクセス
           </h2>
@@ -91,10 +91,10 @@ export function Access() {
               >
                 <div className="text-center">
                   <MapPin size={32} className="text-accent-light mx-auto mb-2" aria-hidden="true" />
-                  <p className="font-serif-display text-xs tracking-widest text-text-secondary/50 uppercase">
+                  <p className="font-serif-display text-xs tracking-widest text-ink-sub/50 uppercase">
                     Google Maps
                   </p>
-                  <p className="font-jp text-xs text-text-secondary/40 mt-1">
+                  <p className="font-jp text-xs text-ink-sub/40 mt-1">
                     ※ 埋め込みコードは後で差し替え
                   </p>
                 </div>
@@ -138,18 +138,18 @@ export function Access() {
                   <div key={row.label} className="flex gap-3">
                     <dt className="flex-shrink-0 flex items-start gap-2 pt-0.5 w-28">
                       <span className="text-gold-light">{row.icon}</span>
-                      <span className="font-serif-display text-xs tracking-widest text-text-secondary/60 uppercase">
+                      <span className="font-serif-display text-xs tracking-widest text-ink-sub/60 uppercase">
                         {row.label}
                       </span>
                     </dt>
-                    <dd className="flex-1 font-jp text-sm text-text-primary">{row.value}</dd>
+                    <dd className="flex-1 font-jp text-sm text-ink">{row.value}</dd>
                   </div>
                 ))}
               </dl>
 
               {/* Seats */}
               <div className="mt-5 pt-5 border-t border-gold-light/20">
-                <p className="font-serif-display text-xs tracking-widest text-text-secondary/50">
+                <p className="font-serif-display text-xs tracking-widest text-ink-sub/50">
                   設備 — {access.seats}
                 </p>
               </div>

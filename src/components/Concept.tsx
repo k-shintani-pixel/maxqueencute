@@ -1,35 +1,43 @@
 import { FadeIn } from '@/components/ui/FadeIn';
 import { Divider } from '@/components/ui/Divider';
 
+/* 色を Tailwind クラスに依存せず直接指定（Tailwind v4 の --color-text-* クラス生成の不確実性を回避） */
+const COLOR_PRIMARY   = '#2A1F14';
+const COLOR_SECONDARY = '#5A4535';
+const COLOR_MUTED     = 'rgba(90, 69, 53, 0.45)';
+
 export function Concept() {
   return (
     <section
       id="concept"
       className="relative py-28 md:py-44 px-4 overflow-hidden"
       style={{
-        background:
+        /* ライトクリーム背景 + 大理石ベイン（オーバーレイdivなしでセクション自体に直接適用） */
+        backgroundColor: '#F0E9DC',
+        backgroundImage: [
           'linear-gradient(180deg, #F0E9DC 0%, #EEE5D6 40%, #FAF6F0 100%)',
+          'repeating-linear-gradient(108deg, transparent 0, transparent 60px, rgba(255,255,255,0.12) 60px, rgba(255,255,255,0.12) 61px)',
+          'repeating-linear-gradient(74deg,  transparent 0, transparent 100px, rgba(212,175,55,0.03) 100px, rgba(212,175,55,0.03) 101px)',
+        ].join(', '),
       }}
       aria-labelledby="concept-heading"
     >
-      {/* Marble texture overlay */}
-      <div
-        className="absolute inset-0 opacity-60 marble-section pointer-events-none"
-        aria-hidden="true"
-      />
-
-      {/* Decorative background text */}
+      {/* Decorative background text — 先に描画して確実にコンテンツの後ろに置く */}
       <div
         className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden"
+        style={{ zIndex: 0 }}
         aria-hidden="true"
       >
-        <span className="font-script leading-none opacity-[0.04] text-text-primary whitespace-nowrap"
-          style={{ fontSize: 'clamp(6rem, 18vw, 20rem)' }}>
+        <span
+          className="font-script leading-none whitespace-nowrap"
+          style={{ fontSize: 'clamp(6rem, 18vw, 20rem)', opacity: 0.04, color: COLOR_PRIMARY }}
+        >
           Philosophy
         </span>
       </div>
 
-      <div className="relative max-w-3xl mx-auto">
+      {/* コンテンツ — z-index: 1 で確実にデコレーション要素の前面に */}
+      <div className="relative max-w-3xl mx-auto" style={{ zIndex: 1 }}>
         <FadeIn>
           <p
             id="concept-heading"
@@ -41,7 +49,10 @@ export function Concept() {
         </FadeIn>
 
         <FadeIn delay={0.1}>
-          <h2 className="font-jp text-3xl md:text-5xl text-text-primary text-center leading-snug mb-12 font-light tracking-widest">
+          <h2
+            className="font-jp text-3xl md:text-5xl text-center leading-snug mb-12 font-light tracking-widest"
+            style={{ color: COLOR_PRIMARY }}
+          >
             10年後も、美しく。
           </h2>
         </FadeIn>
@@ -52,14 +63,14 @@ export function Concept() {
           <FadeIn delay={0.2} direction="right" className="hidden md:flex md:col-span-1 justify-center pt-4">
             <svg width="2" height="200" viewBox="0 0 2 200" fill="none" aria-hidden="true">
               <defs>
-                <linearGradient id="vline" x1="0" y1="0" x2="0" y2="1">
+                <linearGradient id="vline-concept" x1="0" y1="0" x2="0" y2="1">
                   <stop offset="0%"   stopColor="#D4AF37" stopOpacity="0" />
                   <stop offset="25%"  stopColor="#D4AF37" stopOpacity="1" />
                   <stop offset="75%"  stopColor="#D4AF37" stopOpacity="1" />
                   <stop offset="100%" stopColor="#D4AF37" stopOpacity="0" />
                 </linearGradient>
               </defs>
-              <line x1="1" y1="0" x2="1" y2="200" stroke="url(#vline)" strokeWidth="0.8" />
+              <line x1="1" y1="0" x2="1" y2="200" stroke="url(#vline-concept)" strokeWidth="0.8" />
               <circle cx="1" cy="50"  r="1.5" fill="#D4AF37" />
               <circle cx="1" cy="100" r="2"   fill="#D4AF37" />
               <circle cx="1" cy="150" r="1.5" fill="#D4AF37" />
@@ -67,22 +78,34 @@ export function Concept() {
           </FadeIn>
 
           {/* Text block */}
-          <FadeIn delay={0.3} className="md:col-span-4">
+          <FadeIn delay={0.25} className="md:col-span-4">
             <div className="space-y-7">
-              <p className="font-jp text-lg md:text-xl leading-[2.2] text-text-primary font-light tracking-wide">
+              <p
+                className="font-jp text-lg md:text-xl leading-[2.2] font-light tracking-wide"
+                style={{ color: COLOR_PRIMARY }}
+              >
                 爪は、あなたの大切な一部。
               </p>
-              <p className="font-jp text-sm md:text-base leading-[2.4] text-text-secondary">
+              <p
+                className="font-jp text-sm md:text-base leading-[2.4]"
+                style={{ color: COLOR_SECONDARY }}
+              >
                 施しを重ねても、健やかであるために。
                 長く愛され、長く美しい。
                 私たちが大切にしてきた、ひとつの哲学です。
               </p>
-              <p className="font-jp text-sm md:text-base leading-[2.4] text-text-secondary">
+              <p
+                className="font-jp text-sm md:text-base leading-[2.4]"
+                style={{ color: COLOR_SECONDARY }}
+              >
                 技術は、時を超えて積み重なります。
                 トレンドを追いながらも、爪そのものを守る。
                 そのバランスを、私たちは誇りをもって届けています。
               </p>
-              <p className="font-serif-display text-xs text-text-secondary/40 mt-8 italic tracking-wider">
+              <p
+                className="font-serif-display text-xs italic tracking-wider"
+                style={{ color: COLOR_MUTED }}
+              >
                 ※ 文章は後日差し替え予定のサンプルテキストです。
               </p>
             </div>

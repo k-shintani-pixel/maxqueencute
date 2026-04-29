@@ -44,11 +44,11 @@ export function Salons() {
           </p>
           <h2
             id="salons-heading"
-            className="font-jp text-3xl md:text-5xl text-text-primary text-center leading-snug mb-4 font-light tracking-wide"
+            className="font-jp text-3xl md:text-5xl text-ink text-center leading-snug mb-4 font-light tracking-wide"
           >
             同じ建物に、2つのサロン。
           </h2>
-          <p className="font-jp text-sm text-text-secondary/60 text-center tracking-widest mb-16">
+          <p className="font-jp text-sm text-ink-sub/60 text-center tracking-widest mb-16">
             千葉県浦安市高洲 1-6-10
           </p>
         </FadeIn>
@@ -71,19 +71,19 @@ export function Salons() {
 
               <div className="grid md:grid-cols-2 gap-10 items-start">
                 <div>
-                  <h3 className="font-script text-4xl md:text-5xl text-text-primary leading-tight mb-3">
+                  <h3 className="font-script text-4xl md:text-5xl text-ink leading-tight mb-3">
                     {siteConfig.salons.maxqueencute.name}
                   </h3>
                   <p className="font-jp text-sm text-accent-dark/80 mb-1 tracking-wide">
                     {siteConfig.salons.maxqueencute.tagline}
                   </p>
-                  <p className="font-serif-display text-xs tracking-widest text-text-secondary/50 mb-8">
+                  <p className="font-serif-display text-xs tracking-widest text-ink-sub/50 mb-8">
                     Owner: {siteConfig.salons.maxqueencute.owner}
                   </p>
 
                   <ul className="space-y-3 mb-8" role="list">
                     {mqcFeatures.map((f) => (
-                      <li key={f.label} className="flex items-start gap-2.5 font-jp text-sm text-text-secondary leading-relaxed">
+                      <li key={f.label} className="flex items-start gap-2.5 font-jp text-sm text-ink-sub leading-relaxed">
                         <span className="text-gold-light mt-1 flex-shrink-0 text-xs" aria-hidden="true">◆</span>
                         {f.label}
                       </li>
@@ -131,19 +131,19 @@ export function Salons() {
                     <span className="text-gold-light text-xs" aria-hidden="true">✦</span>
                   </div>
 
-                  <h3 className="font-script text-4xl md:text-5xl text-text-primary leading-tight mb-3">
+                  <h3 className="font-script text-4xl md:text-5xl text-ink leading-tight mb-3">
                     {siteConfig.salons.ruri.name}
                   </h3>
                   <p className="font-jp text-sm text-gold-dark/80 mb-1 tracking-wide">
                     {siteConfig.salons.ruri.tagline}
                   </p>
-                  <p className="font-serif-display text-xs tracking-widest text-text-secondary/50 mb-8">
+                  <p className="font-serif-display text-xs tracking-widest text-ink-sub/50 mb-8">
                     Nail Artist: {siteConfig.salons.ruri.staff}
                   </p>
 
                   <ul className="space-y-3 mb-8" role="list">
                     {ruriFeatures.map((f) => (
-                      <li key={f.label} className="flex items-start gap-2.5 font-jp text-sm text-text-secondary leading-relaxed">
+                      <li key={f.label} className="flex items-start gap-2.5 font-jp text-sm text-ink-sub leading-relaxed">
                         <span className="text-gold-light mt-1 flex-shrink-0 text-xs" aria-hidden="true">◆</span>
                         {f.label}
                       </li>

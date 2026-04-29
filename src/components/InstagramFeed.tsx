@@ -23,9 +23,9 @@ function InstagramColumn({
     <div className="flex flex-col">
       {/* Column header */}
       <div className="text-center mb-6">
-        <p className="font-script text-3xl text-text-primary mb-1">{salonName}</p>
+        <p className="font-script text-3xl text-ink mb-1">{salonName}</p>
         <p className={`font-serif-display text-xs tracking-widest ${accentClass}`}>{handle}</p>
-        <p className="font-jp text-xs text-text-secondary/60 mt-2">{tagline}</p>
+        <p className="font-jp text-xs text-ink-sub/60 mt-2">{tagline}</p>
       </div>
 
       {/* Embed placeholder */}
@@ -34,7 +34,7 @@ function InstagramColumn({
         aria-label={`${salonName} Instagramフィード（埋め込み予定）`}
       >
         <InstagramIcon size={32} className="text-accent-light" aria-hidden={true} />
-        <p className="font-jp text-xs text-text-secondary/50 text-center leading-relaxed">
+        <p className="font-jp text-xs text-ink-sub/50 text-center leading-relaxed">
           {/* ここに SnapWidget 等の Instagram 埋め込みコードを貼り付けてください */}
           Instagramフィード埋め込みエリア
           <br />
@@ -75,7 +75,7 @@ export function InstagramFeed() {
           </p>
           <h2
             id="instagram-heading"
-            className="font-script text-5xl md:text-6xl text-text-primary text-center leading-tight mb-12"
+            className="font-script text-5xl md:text-6xl text-ink text-center leading-tight mb-12"
           >
             Follow Us
           </h2>

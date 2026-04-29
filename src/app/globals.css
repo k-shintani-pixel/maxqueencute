@@ -17,8 +17,8 @@
   --color-gold-dark:  #9C7A1A;
 
   /* ── Text ── */
-  --color-text-primary:   #2A1F14;
-  --color-text-secondary: #5A4535;
+  --color-ink:   #2A1F14;
+  --color-ink-sub: #5A4535;
 
   /* ── Fonts ── */
   --font-script:  var(--font-italianno);

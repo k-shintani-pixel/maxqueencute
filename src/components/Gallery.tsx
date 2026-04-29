@@ -52,11 +52,11 @@ export function Gallery() {
           </p>
           <h2
             id="gallery-heading"
-            className="font-script text-5xl md:text-6xl text-text-primary text-center leading-tight mb-4"
+            className="font-script text-5xl md:text-6xl text-ink text-center leading-tight mb-4"
           >
             ギャラリー
           </h2>
-          <p className="font-jp text-xs text-text-secondary/50 text-center mb-12">
+          <p className="font-jp text-xs text-ink-sub/50 text-center mb-12">
             ※ 施術写真は順次追加予定です。{' '}
             <a
               href="https://www.instagram.com/maxqueencute"

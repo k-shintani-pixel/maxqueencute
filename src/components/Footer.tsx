@@ -3,7 +3,7 @@ import { siteConfig } from '@/config/site';
 
 export function Footer() {
   return (
-    <footer className="bg-text-primary text-base py-12 px-4">
+    <footer className="bg-ink text-base py-12 px-4">
       <div className="max-w-4xl mx-auto">
         {/* Salon names */}
         <div className="text-center mb-8">

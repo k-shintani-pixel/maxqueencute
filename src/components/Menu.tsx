@@ -32,9 +32,9 @@ function MenuCard({ item }: { item: MenuItem }) {
               </span>
             </span>
           )}
-          <p className="font-jp text-sm md:text-base text-text-primary leading-relaxed">{item.name}</p>
+          <p className="font-jp text-sm md:text-base text-ink leading-relaxed">{item.name}</p>
           {hasUnit && (
-            <p className="font-serif-display text-xs text-text-secondary/60 mt-1 tracking-wide">
+            <p className="font-serif-display text-xs text-ink-sub/60 mt-1 tracking-wide">
               {item.unit}
             </p>
           )}
@@ -44,7 +44,7 @@ function MenuCard({ item }: { item: MenuItem }) {
             {formatPrice(item.price)}
             {hasPriceNote && <span className="text-sm">{item.priceNote}</span>}
           </p>
-          <p className="font-serif-display text-xs text-text-secondary/50 mt-0.5">
+          <p className="font-serif-display text-xs text-ink-sub/50 mt-0.5">
             約{item.durationMin}分
           </p>
         </div>
@@ -60,13 +60,13 @@ function MenuSection({ salon, label }: { salon: Tab; label: string }) {
   return (
     <div>
       <div className="flex items-center gap-4 mb-8">
-        <h3 className="font-script text-3xl md:text-4xl text-text-primary">{label}</h3>
+        <h3 className="font-script text-3xl md:text-4xl text-ink">{label}</h3>
         <div className="flex-1 h-px bg-gold-light/30" aria-hidden="true" />
       </div>
 
       {categories.map((cat) => (
         <div key={cat} className="mb-8">
-          <p className="font-serif-display text-xs tracking-[0.4em] text-text-secondary/60 uppercase mb-4 pb-2 border-b border-secondary/20">
+          <p className="font-serif-display text-xs tracking-[0.4em] text-ink-sub/60 uppercase mb-4 pb-2 border-b border-secondary/20">
             {cat}
           </p>
           <div className="space-y-4">
@@ -114,7 +114,7 @@ export function Menu() {
           </p>
           <h2
             id="menu-heading"
-            className="font-script text-5xl md:text-6xl text-text-primary text-center leading-tight mb-12"
+            className="font-script text-5xl md:text-6xl text-ink text-center leading-tight mb-12"
           >
             メニュー・料金
           </h2>
@@ -136,7 +136,7 @@ export function Menu() {
                 className={`flex-1 font-serif-display text-xs md:text-sm tracking-widest py-3 px-4 transition-all ${
                   activeTab === tab.id
                     ? 'text-gold-dark border-b-2 border-gold-light -mb-px'
-                    : 'text-text-secondary/50 hover:text-text-secondary'
+                    : 'text-ink-sub/50 hover:text-ink-sub'
                 }`}
               >
                 {tab.label}
@@ -171,7 +171,7 @@ export function Menu() {
 
         {/* HPB common note */}
         <FadeIn delay={0.2}>
-          <p className="font-jp text-xs text-text-secondary/50 text-center mt-8">
+          <p className="font-jp text-xs text-ink-sub/50 text-center mt-8">
             ※ 予約はホットペッパービューティーより承ります（両店舗共通の予約ページ）
           </p>
         </FadeIn>
