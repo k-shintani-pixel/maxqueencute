@@ -84,34 +84,16 @@ export function Access() {
           {/* Map */}
           <FadeIn delay={0.1} direction="right">
             <Frame variant="default" className="overflow-hidden">
-              {/* Google Maps embed placeholder */}
-              <div
-                className="w-full h-64 md:h-80 bg-secondary flex items-center justify-center relative"
-                aria-label="Googleマップ（準備中）"
-              >
-                <div className="text-center">
-                  <MapPin size={32} className="text-accent-light mx-auto mb-2" aria-hidden="true" />
-                  <p className="font-serif-display text-xs tracking-widest text-ink-sub/50 uppercase">
-                    Google Maps
-                  </p>
-                  <p className="font-jp text-xs text-ink-sub/40 mt-1">
-                    ※ 埋め込みコードは後で差し替え
-                  </p>
-                </div>
-                {/*
-                  後でこのdivを以下のiframeに差し替えてください:
-                  <iframe
-                    src="[GOOGLE_MAPS_EMBED_URL]"
-                    width="100%"
-                    height="100%"
-                    style={{ border: 0 }}
-                    allowFullScreen
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    title="MaxQueenCute / Nail salon Ruri へのアクセス"
-                  />
-                */}
-              </div>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3242.509127398556!2d139.91295177436197!3d35.63982597260068!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60187db5e324969b%3A0x96e9715b344bd1dc!2z44CSMjc5LTAwMjMg5Y2D6JGJ55yM5rWm5a6J5biC6auY5rSy77yR5LiB55uu77yW4oiS77yR77yQ!5e0!3m2!1sja!2sjp!4v1777463847408!5m2!1sja!2sjp"
+                width="100%"
+                height="320"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="MaxQueenCute / Nail salon Ruri へのアクセス"
+              />
             </Frame>
           </FadeIn>
 
