@@ -1,11 +1,21 @@
+'use client';
+
+import { useState } from 'react';
 import { FadeIn } from '@/components/ui/FadeIn';
 import { Divider } from '@/components/ui/Divider';
 import { galleryImages } from '@/config/gallery';
+import { siteConfig } from '@/config/site';
 
-function GalleryPlaceholder({ index }: { index: number }) {
+type Tab = 'maxqueencute' | 'ruri';
+
+function GalleryPlaceholder({ index, label }: { index: number; label: string }) {
   return (
-    <div className="relative aspect-square overflow-hidden" role="img" aria-label={`ネイルデザイン ${index + 1}（Coming Soon）`}>
-      {/* Outer border */}
+    <div
+      className="relative aspect-square overflow-hidden"
+      role="img"
+      aria-label={`${label} ネイルデザイン ${index + 1}（Coming Soon）`}
+    >
+      {/* Corner bracket overlay */}
       <div className="absolute inset-0 pointer-events-none z-10" aria-hidden="true">
         <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none" fill="none">
           <rect x="1" y="1" width="98" height="98" stroke="#C4B5DB" strokeWidth="0.5" />
@@ -19,24 +29,67 @@ function GalleryPlaceholder({ index }: { index: number }) {
       {/* Placeholder background */}
       <div
         className="absolute inset-0"
-        style={{
-          background: 'linear-gradient(135deg, #EDE0FA 0%, #F5F0FF 50%, #E8DAFA 100%)',
-        }}
+        style={{ background: 'linear-gradient(135deg, #EDE0FA 0%, #F5F0FF 50%, #E8DAFA 100%)' }}
         aria-hidden="true"
       />
 
       {/* Content */}
       <div className="absolute inset-0 flex flex-col items-center justify-center gap-2">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <path d="M12 2 L13.5 8 L20 8 L14.5 11.5 L16.5 18 L12 14 L7.5 18 L9.5 11.5 L4 8 L10.5 8 Z" stroke="#C4B5DB" strokeWidth="0.8" fill="none" />
+          <path
+            d="M12 2 L13.5 8 L20 8 L14.5 11.5 L16.5 18 L12 14 L7.5 18 L9.5 11.5 L4 8 L10.5 8 Z"
+            stroke="#C4B5DB"
+            strokeWidth="0.8"
+            fill="none"
+          />
         </svg>
-        <span className="font-script text-lg text-accent-dark/50">Coming Soon</span>
+        <span className="font-script text-lg" style={{ color: 'rgba(92,61,138,0.4)' }}>
+          Coming Soon
+        </span>
       </div>
     </div>
   );
 }
 
+type GalleryGridProps = {
+  salon: Tab;
+  salonLabel: string;
+  instagramUrl: string;
+  instagramHandle: string;
+};
+
+function GalleryGrid({ salon, salonLabel, instagramUrl, instagramHandle }: GalleryGridProps) {
+  const images = galleryImages.filter((img) => img.salon === salon);
+
+  return (
+    <div>
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 mb-6">
+        {images.map((image, i) => (
+          <FadeIn key={image.id} delay={i * 0.06}>
+            <GalleryPlaceholder index={i} label={salonLabel} />
+          </FadeIn>
+        ))}
+      </div>
+      <p className="font-jp text-xs text-center" style={{ color: 'rgba(90,69,53,0.5)' }}>
+        ※ 施術写真は順次追加予定です。{' '}
+        <a
+          href={instagramUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline underline-offset-2 hover:text-gold-light transition-colors"
+          aria-label={`${salonLabel}をInstagramでフォロー`}
+        >
+          {instagramHandle}
+        </a>
+        でも随時公開中。
+      </p>
+    </div>
+  );
+}
+
 export function Gallery() {
+  const [activeTab, setActiveTab] = useState<Tab>('maxqueencute');
+
   return (
     <section
       id="gallery"
@@ -52,32 +105,74 @@ export function Gallery() {
           </p>
           <h2
             id="gallery-heading"
-            className="font-script text-5xl md:text-6xl text-ink text-center leading-tight mb-4"
+            className="font-script text-5xl md:text-6xl text-center leading-tight mb-12"
+            style={{ color: '#2A1F14' }}
           >
             ギャラリー
           </h2>
-          <p className="font-jp text-xs text-ink-sub/50 text-center mb-12">
-            ※ 施術写真は順次追加予定です。{' '}
-            <a
-              href="https://www.instagram.com/maxqueencute"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline underline-offset-2 hover:text-gold-light transition-colors"
-              aria-label="InstagramでMaxQueenCuteをフォロー"
-            >
-              Instagram
-            </a>
-            でも随時公開中。
-          </p>
         </FadeIn>
 
-        {/* Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
-          {galleryImages.map((image, i) => (
-            <FadeIn key={image.id} delay={i * 0.06}>
-              <GalleryPlaceholder index={i} />
-            </FadeIn>
-          ))}
+        {/* Tabs */}
+        <FadeIn delay={0.1}>
+          <div
+            className="flex border-b border-gold-light/30 mb-10"
+            role="tablist"
+            aria-label="店舗切り替え"
+          >
+            {([
+              { id: 'maxqueencute' as Tab, label: 'MaxQueenCute 2F' },
+              { id: 'ruri' as Tab, label: 'Nail salon Ruri 1F' },
+            ] as const).map((tab) => (
+              <button
+                key={tab.id}
+                role="tab"
+                aria-selected={activeTab === tab.id}
+                aria-controls={`gallery-panel-${tab.id}`}
+                onClick={() => setActiveTab(tab.id)}
+                className={`flex-1 font-serif-display text-xs md:text-sm tracking-widest py-3 px-4 transition-all ${
+                  activeTab === tab.id
+                    ? 'border-b-2 border-gold-light -mb-px'
+                    : 'hover:opacity-80'
+                }`}
+                style={{
+                  color:
+                    activeTab === tab.id ? '#9C7A1A' : 'rgba(90,69,53,0.5)',
+                }}
+              >
+                {tab.label}
+              </button>
+            ))}
+          </div>
+        </FadeIn>
+
+        {/* MaxQueenCute panel */}
+        <div
+          id="gallery-panel-maxqueencute"
+          role="tabpanel"
+          aria-labelledby="gallery-tab-maxqueencute"
+          className={activeTab === 'maxqueencute' ? 'block' : 'hidden'}
+        >
+          <GalleryGrid
+            salon="maxqueencute"
+            salonLabel="MaxQueenCute"
+            instagramUrl={siteConfig.salons.maxqueencute.instagramUrl}
+            instagramHandle={siteConfig.salons.maxqueencute.instagramHandle}
+          />
+        </div>
+
+        {/* Ruri panel */}
+        <div
+          id="gallery-panel-ruri"
+          role="tabpanel"
+          aria-labelledby="gallery-tab-ruri"
+          className={activeTab === 'ruri' ? 'block' : 'hidden'}
+        >
+          <GalleryGrid
+            salon="ruri"
+            salonLabel="Nail salon Ruri"
+            instagramUrl={siteConfig.salons.ruri.instagramUrl}
+            instagramHandle={siteConfig.salons.ruri.instagramHandle}
+          />
         </div>
       </div>
 
