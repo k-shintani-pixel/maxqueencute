@@ -44,9 +44,6 @@ function MenuCard({ item }: { item: MenuItem }) {
             {formatPrice(item.price)}
             {hasPriceNote && <span className="text-sm">{item.priceNote}</span>}
           </p>
-          <p className="font-serif-display text-xs mt-0.5" style={{ color: 'rgba(107,78,78,0.5)' }}>
-            約{item.durationMin}分
-          </p>
         </div>
       </div>
     </Frame>
