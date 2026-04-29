@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { siteConfig } from '@/config/site';
 
@@ -181,6 +182,24 @@ export function Hero() {
           Urayasu, Chiba
         </motion.p>
       </div>
+
+      {/* ── Bottom-left image ── */}
+      <motion.div
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1.2, delay: 0.6 }}
+        className="absolute bottom-0 left-0 pointer-events-none"
+        aria-hidden="true"
+      >
+        <Image
+          src="/images/hero-bottom-left.png"
+          alt=""
+          width={300}
+          height={300}
+          className="w-40 md:w-64 lg:w-72 h-auto object-contain"
+          priority
+        />
+      </motion.div>
 
       {/* ── Scroll indicator ── */}
       <motion.div
