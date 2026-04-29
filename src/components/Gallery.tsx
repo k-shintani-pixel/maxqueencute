@@ -129,7 +129,7 @@ export function Gallery() {
                 aria-selected={activeTab === tab.id}
                 aria-controls={`gallery-panel-${tab.id}`}
                 onClick={() => setActiveTab(tab.id)}
-                className={`flex-1 font-serif-display text-xs md:text-sm tracking-widest py-3 px-4 transition-all ${
+                className={`flex-1 font-serif-display text-sm md:text-base tracking-wider py-3 px-4 transition-all ${
                   activeTab === tab.id
                     ? 'border-b-2 border-gold-light -mb-px'
                     : 'hover:opacity-80'

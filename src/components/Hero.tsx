@@ -77,7 +77,7 @@ export function Hero() {
             style={{
               fontSize: 'clamp(3.5rem, 10vw, 8rem)',
               color: GOLD,
-              textShadow: `0 2px 20px rgba(139,34,82,0.2), 0 0 40px rgba(212,175,55,0.2)`,
+              textShadow: `0 2px 16px rgba(255,255,255,0.7), 0 0 40px rgba(255,255,255,0.4)`,
             }}
           >
             {siteConfig.salons.maxqueencute.name}
@@ -110,7 +110,7 @@ export function Hero() {
             style={{
               fontSize: 'clamp(2rem, 6vw, 5rem)',
               color: 'rgba(212,175,55,0.85)',
-              textShadow: '0 2px 12px rgba(139,34,82,0.15)',
+              textShadow: '0 2px 12px rgba(255,255,255,0.6)',
             }}
           >
             {siteConfig.salons.ruri.name}
