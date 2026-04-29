@@ -128,18 +128,18 @@ export function Hero() {
           <div
             className="inline-flex items-center gap-2 px-5 py-1.5 rounded-full"
             style={{
-              border: `1px solid rgba(212,175,55,0.55)`,
-              background: 'rgba(212,175,55,0.1)',
+              border: '1px solid rgba(253,242,244,0.45)',
+              background: 'rgba(253,242,244,0.12)',
             }}
           >
-            <span style={{ color: GOLD, fontSize: '0.55rem' }} aria-hidden="true">✦</span>
+            <span style={{ color: 'rgba(253,242,244,0.7)', fontSize: '0.55rem' }} aria-hidden="true">✦</span>
             <p
               className="font-serif-display text-xs tracking-[0.4em] uppercase"
-              style={{ color: GOLD }}
+              style={{ color: 'rgba(253,242,244,0.88)' }}
             >
               {siteConfig.school.name}
             </p>
-            <span style={{ color: GOLD, fontSize: '0.55rem' }} aria-hidden="true">✦</span>
+            <span style={{ color: 'rgba(253,242,244,0.7)', fontSize: '0.55rem' }} aria-hidden="true">✦</span>
           </div>
         </motion.div>
 
