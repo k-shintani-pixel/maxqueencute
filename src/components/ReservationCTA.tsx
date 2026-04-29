@@ -16,7 +16,7 @@ export function ReservationCTA() {
       className="relative py-14 md:py-20 px-4 overflow-hidden"
       style={{
         background:
-          'linear-gradient(160deg, #3D0A1E 0%, #7B1A3C 30%, #C05070 55%, #EDA8BB 78%, #FDF2F4 100%)',
+          'linear-gradient(160deg, #FFF5F8 0%, #FDE8EE 40%, #F8D0DF 75%, #FDE0EB 100%)',
       }}
       aria-labelledby="reservation-heading"
     >
@@ -49,26 +49,26 @@ export function ReservationCTA() {
 
         {/* Eyebrow */}
         <FadeIn>
-          <p className="font-serif-display text-xs tracking-[0.5em] uppercase mb-6" style={{ color: 'rgba(212,175,55,0.65)' }}>
+          <p className="font-serif-display text-xs tracking-[0.5em] uppercase mb-6" style={{ color: '#9C7A1A' }}>
             Reservation
           </p>
           <h2
             id="reservation-heading"
             className="font-script leading-tight mb-6"
-            style={{ fontSize: 'clamp(2.5rem, 8vw, 5rem)', color: '#FAF6F0' }}
+            style={{ fontSize: 'clamp(2.5rem, 8vw, 5rem)', color: '#3D2B2B' }}
           >
             ご予約はこちら
           </h2>
-          <p className="font-jp text-sm mb-14 leading-loose" style={{ color: 'rgba(250,246,240,0.7)' }}>
+          <p className="font-jp text-sm mb-14 leading-loose" style={{ color: 'rgba(61,43,43,0.7)' }}>
             24時間オンライン予約受付中
             <br />
-            <span className="text-xs" style={{ color: 'rgba(250,246,240,0.45)' }}>両店舗共通の予約ページです</span>
+            <span className="text-xs" style={{ color: 'rgba(61,43,43,0.5)' }}>両店舗共通の予約ページです</span>
           </p>
         </FadeIn>
 
         {/* Glass panel wrapping CTAs */}
         <FadeIn delay={0.1}>
-          <div className="glass-card-dark rounded-sm p-8 md:p-12 max-w-md mx-auto">
+          <div className="glass-card rounded-sm p-8 md:p-12 max-w-md mx-auto">
             {/* HPB Button — gold shimmer */}
             <a
               href={siteConfig.reservation.hpbUrl}
@@ -89,7 +89,7 @@ export function ReservationCTA() {
 
         {/* Footer note */}
         <FadeIn delay={0.25}>
-          <p className="font-jp text-xs mt-8" style={{ color: 'rgba(212,175,55,0.4)' }}>
+          <p className="font-jp text-xs mt-8" style={{ color: 'rgba(107,78,78,0.5)' }}>
             ご不明な点はInstagramよりお気軽にどうぞ。
           </p>
         </FadeIn>
