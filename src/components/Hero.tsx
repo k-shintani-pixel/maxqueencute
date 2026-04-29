@@ -126,12 +126,22 @@ export function Hero() {
           transition={{ duration: 1.0, delay: 0.65 }}
           className="mt-5"
         >
-          <p
-            className="font-serif-display text-xs md:text-sm tracking-[0.45em] uppercase"
-            style={{ color: GOLD_DIM }}
+          <div
+            className="inline-flex items-center gap-2 px-5 py-1.5 rounded-full"
+            style={{
+              border: `1px solid rgba(212,175,55,0.55)`,
+              background: 'rgba(212,175,55,0.1)',
+            }}
           >
-            {siteConfig.school.name}
-          </p>
+            <span style={{ color: GOLD, fontSize: '0.55rem' }} aria-hidden="true">✦</span>
+            <p
+              className="font-serif-display text-xs tracking-[0.4em] uppercase"
+              style={{ color: GOLD }}
+            >
+              {siteConfig.school.name}
+            </p>
+            <span style={{ color: GOLD, fontSize: '0.55rem' }} aria-hidden="true">✦</span>
+          </div>
         </motion.div>
 
         {/* Ornament divider */}
