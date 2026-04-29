@@ -2,6 +2,7 @@ import { FadeIn } from '@/components/ui/FadeIn';
 import { Frame } from '@/components/ui/Frame';
 import { Button } from '@/components/ui/Button';
 import { Divider } from '@/components/ui/Divider';
+import { InstagramEmbed } from '@/components/ui/InstagramEmbed';
 import { siteConfig } from '@/config/site';
 import { InstagramIcon } from '@/components/ui/InstagramIcon';
 
@@ -100,6 +101,19 @@ export function School() {
             </FadeIn>
           ))}
         </div>
+
+        {/* Instagram embed */}
+        <FadeIn delay={0.2}>
+          <div className="mb-16">
+            <p className="font-serif-display text-xs tracking-[0.5em] text-gold-light uppercase text-center mb-8">
+              スクールの様子
+            </p>
+            <InstagramEmbed
+              postUrl="https://www.instagram.com/p/DXse8qqExXP/"
+              className="flex justify-center"
+            />
+          </div>
+        </FadeIn>
 
         {/* CTA */}
         <FadeIn delay={0.3}>

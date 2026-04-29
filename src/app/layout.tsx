@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Italianno, Cormorant_Garamond, Noto_Serif_JP } from 'next/font/google';
+import Script from 'next/script';
 import './globals.css';
 
 const italianno = Italianno({
@@ -67,7 +68,10 @@ export default function RootLayout({
       lang="ja"
       className={`${italianno.variable} ${cormorantGaramond.variable} ${notoSerifJP.variable}`}
     >
-      <body>{children}</body>
+      <body>
+        {children}
+        <Script src="https://www.instagram.com/embed.js" strategy="lazyOnload" />
+      </body>
     </html>
   );
 }
