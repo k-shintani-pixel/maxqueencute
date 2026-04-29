@@ -110,7 +110,7 @@ export function School() {
             </p>
             <InstagramEmbed
               postUrl="https://www.instagram.com/p/DXse8qqExXP/"
-              className="flex justify-center"
+              imageOnly
             />
           </div>
         </FadeIn>
