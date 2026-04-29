@@ -151,9 +151,12 @@ export function Menu() {
                 onClick={() => setActiveTab(tab.id)}
                 className={`flex-1 font-serif-display text-sm md:text-base tracking-wider py-3 px-4 transition-all ${
                   activeTab === tab.id
-                    ? 'text-gold-dark border-b-2 border-gold-light -mb-px'
-                    : 'text-ink-sub/50 hover:text-ink-sub'
+                    ? 'border-b-2 border-gold-light -mb-px'
+                    : ''
                 }`}
+                style={{
+                  color: activeTab === tab.id ? '#9C7A1A' : 'rgba(107,78,78,0.5)',
+                }}
               >
                 {tab.label}
               </button>

@@ -134,7 +134,7 @@ export function Hero() {
             <span style={{ color: 'rgba(253,242,244,0.7)', fontSize: '0.55rem' }} aria-hidden="true">✦</span>
             <p
               className="font-serif-display text-xs tracking-[0.4em] uppercase"
-              style={{ color: 'rgba(61,43,43,0.75)' }}
+              style={{ color: 'rgba(253,242,244,0.88)' }}
             >
               {siteConfig.school.name}
             </p>
