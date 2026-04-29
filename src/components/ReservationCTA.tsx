@@ -16,7 +16,7 @@ export function ReservationCTA() {
       className="relative py-28 md:py-48 px-4 overflow-hidden"
       style={{
         background:
-          'linear-gradient(160deg, #1C0A32 0%, #3A1C6A 30%, #6B4A9B 55%, #EDE6FA 78%, #FAF6F0 100%)',
+          'linear-gradient(160deg, #3D0A1E 0%, #7B1A3C 30%, #C05070 55%, #EDA8BB 78%, #FDF2F4 100%)',
       }}
       aria-labelledby="reservation-heading"
     >
@@ -25,8 +25,8 @@ export function ReservationCTA() {
         className="absolute inset-0 opacity-[0.08] pointer-events-none"
         style={{
           backgroundImage: [
-            'repeating-linear-gradient(108deg,transparent 0,transparent 55px,rgba(255,255,255,0.5) 55px,rgba(255,255,255,0.5) 56px)',
-            'repeating-linear-gradient(72deg,transparent 0,transparent 90px,rgba(212,175,55,0.5) 90px,rgba(212,175,55,0.5) 91px)',
+            'repeating-linear-gradient(108deg,transparent 0,transparent 55px,rgba(255,220,230,0.4) 55px,rgba(255,220,230,0.4) 56px)',
+            'repeating-linear-gradient(72deg,transparent 0,transparent 90px,rgba(212,175,55,0.4) 90px,rgba(212,175,55,0.4) 91px)',
           ].join(','),
         }}
         aria-hidden="true"

@@ -21,7 +21,7 @@ export function Frame({ children, className = '', variant = 'default', style, ..
 
   return (
     <div
-      className={`relative rounded-sm ${isGlass ? 'glass-card' : ''} ${className}`}
+      className={`relative rounded-2xl ${isGlass ? 'glass-card' : ''} ${className}`}
       style={style}
       {...rest}
     >
@@ -53,7 +53,7 @@ export function Frame({ children, className = '', variant = 'default', style, ..
 
       {/* ── Inner inset border ── */}
       <div
-        className="absolute inset-3 pointer-events-none rounded-sm"
+        className="absolute inset-3 pointer-events-none rounded-xl"
         style={{ border: `0.5px solid ${bc}`, opacity: isGlass ? 0.3 : 0.35 }}
       />
 

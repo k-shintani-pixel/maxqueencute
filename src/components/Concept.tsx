@@ -2,9 +2,9 @@ import { FadeIn } from '@/components/ui/FadeIn';
 import { Divider } from '@/components/ui/Divider';
 
 /* 色を Tailwind クラスに依存せず直接指定（Tailwind v4 の --color-text-* クラス生成の不確実性を回避） */
-const COLOR_PRIMARY   = '#2A1F14';
-const COLOR_SECONDARY = '#5A4535';
-const COLOR_MUTED     = 'rgba(90, 69, 53, 0.45)';
+const COLOR_PRIMARY   = '#3D2B2B';
+const COLOR_SECONDARY = '#6B4E4E';
+const COLOR_MUTED     = 'rgba(107, 78, 78, 0.45)';
 
 export function Concept() {
   return (
@@ -13,11 +13,11 @@ export function Concept() {
       className="relative py-28 md:py-44 px-4 overflow-hidden"
       style={{
         /* ライトクリーム背景 + 大理石ベイン（オーバーレイdivなしでセクション自体に直接適用） */
-        backgroundColor: '#F0E9DC',
+        backgroundColor: '#FDF2F4',
         backgroundImage: [
-          'linear-gradient(180deg, #F0E9DC 0%, #EEE5D6 40%, #FAF6F0 100%)',
-          'repeating-linear-gradient(108deg, transparent 0, transparent 60px, rgba(255,255,255,0.12) 60px, rgba(255,255,255,0.12) 61px)',
-          'repeating-linear-gradient(74deg,  transparent 0, transparent 100px, rgba(212,175,55,0.03) 100px, rgba(212,175,55,0.03) 101px)',
+          'linear-gradient(180deg, #FDF2F4 0%, #FAF0F3 40%, #FFFFFF 100%)',
+          'repeating-linear-gradient(108deg, transparent 0, transparent 60px, rgba(255,255,255,0.18) 60px, rgba(255,255,255,0.18) 61px)',
+          'repeating-linear-gradient(74deg,  transparent 0, transparent 100px, rgba(212,175,55,0.025) 100px, rgba(212,175,55,0.025) 101px)',
         ].join(', '),
       }}
       aria-labelledby="concept-heading"

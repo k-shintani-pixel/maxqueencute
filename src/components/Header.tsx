@@ -29,14 +29,14 @@ export function Header() {
           ? 'backdrop-blur-md shadow-sm border-b border-gold-light/10'
           : 'bg-transparent'
       }`}
-      style={scrolled ? { background: 'rgba(45,24,84,0.75)' } : undefined}
+      style={scrolled ? { background: 'rgba(61,10,30,0.82)' } : undefined}
     >
       <div className="max-w-6xl mx-auto px-4 md:px-8 h-16 flex items-center justify-between">
         {/* Logo */}
         <a
           href="#"
           className="font-script text-2xl leading-none transition-colors duration-300"
-          style={{ color: scrolled ? '#FAF6F0' : '#2A1F14' }}
+          style={{ color: scrolled ? '#FDF2F4' : '#3D2B2B' }}
           aria-label="トップに戻る"
         >
           {siteConfig.salons.maxqueencute.name}
@@ -49,9 +49,9 @@ export function Header() {
               key={item.href}
               href={item.href}
               className="font-serif-display text-xs tracking-widest uppercase transition-colors duration-300"
-              style={{ color: scrolled ? 'rgba(250,246,240,0.65)' : '#5A4535' }}
+              style={{ color: scrolled ? 'rgba(250,246,240,0.65)' : '#6B4E4E' }}
               onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = '#D4AF37'; }}
-              onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = scrolled ? 'rgba(250,246,240,0.65)' : '#5A4535'; }}
+              onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = scrolled ? 'rgba(250,246,240,0.65)' : '#6B4E4E'; }}
             >
               {item.label}
             </a>
@@ -60,7 +60,7 @@ export function Header() {
             href={siteConfig.reservation.hpbUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-gold font-serif-display text-xs tracking-widest px-5 py-2 rounded-sm"
+            className="btn-gold font-serif-display text-xs tracking-widest px-5 py-2 rounded-full"
           >
             Reserve
           </a>
@@ -77,7 +77,7 @@ export function Header() {
             <span
               key={i}
               className={`block w-5 h-px transition-all duration-300 ${menuOpen ? cls : ''}`}
-              style={{ background: scrolled ? '#FAF6F0' : '#2A1F14' }}
+              style={{ background: scrolled ? '#FDF2F4' : '#3D2B2B' }}
             />
           ))}
         </button>
@@ -87,7 +87,7 @@ export function Header() {
       {menuOpen && (
         <div
           className="md:hidden backdrop-blur-md border-t"
-          style={{ background: 'rgba(28,10,50,0.92)', borderColor: 'rgba(212,175,55,0.2)' }}
+          style={{ background: 'rgba(61,10,30,0.94)', borderColor: 'rgba(212,175,55,0.2)' }}
         >
           <nav className="flex flex-col py-4" aria-label="モバイルナビゲーション">
             {navItems.map((item) => (
@@ -107,7 +107,7 @@ export function Header() {
               href={siteConfig.reservation.hpbUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-gold font-serif-display text-sm tracking-widest mx-6 my-3 px-4 py-3 text-center rounded-sm"
+              className="btn-gold font-serif-display text-sm tracking-widest mx-6 my-3 px-4 py-3 text-center rounded-full"
               onClick={() => setMenuOpen(false)}
             >
               Reserve

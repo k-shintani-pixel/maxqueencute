@@ -14,19 +14,19 @@ type AnchorProps = BaseProps & AnchorHTMLAttributes<HTMLAnchorElement> & { href:
 type Props = ButtonProps | AnchorProps;
 
 const baseStyles =
-  'inline-flex items-center justify-center font-serif-display tracking-widest cursor-pointer select-none rounded-sm';
+  'inline-flex items-center justify-center font-serif-display tracking-widest cursor-pointer select-none rounded-full';
 
 const variants: Record<NonNullable<BaseProps['variant']>, string> = {
   /* Gold metallic shimmer — uses .btn-gold from globals.css */
   primary:
-    'btn-gold text-white px-8 py-3 rounded-sm',
+    'btn-gold text-white px-8 py-3 rounded-full',
   /* Accent purple */
   secondary:
-    'bg-accent-dark text-white border border-accent-dark rounded-sm px-8 py-3 ' +
+    'bg-accent-dark text-white border border-accent-dark rounded-full px-8 py-3 ' +
     'hover:bg-accent-mid hover:border-accent-mid transition-all duration-300',
   /* Gold outline + hover shimmer */
   outline:
-    'btn-outline-gold px-8 py-3 rounded-sm',
+    'btn-outline-gold px-8 py-3 rounded-full',
   ghost:
     'bg-transparent text-ink-sub hover:text-gold-light underline underline-offset-4 transition-colors duration-200',
 };

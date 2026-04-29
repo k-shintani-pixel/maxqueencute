@@ -29,7 +29,7 @@ function GalleryPlaceholder({ index, label }: { index: number; label: string }) 
       {/* Placeholder background */}
       <div
         className="absolute inset-0"
-        style={{ background: 'linear-gradient(135deg, #EDE0FA 0%, #F5F0FF 50%, #E8DAFA 100%)' }}
+        style={{ background: 'linear-gradient(135deg, #FDE8EE 0%, #FDF2F4 50%, #FADADD 100%)' }}
         aria-hidden="true"
       />
 
@@ -43,7 +43,7 @@ function GalleryPlaceholder({ index, label }: { index: number; label: string }) 
             fill="none"
           />
         </svg>
-        <span className="font-script text-lg" style={{ color: 'rgba(92,61,138,0.4)' }}>
+        <span className="font-script text-lg" style={{ color: 'rgba(139,34,82,0.35)' }}>
           Coming Soon
         </span>
       </div>
@@ -70,7 +70,7 @@ function GalleryGrid({ salon, salonLabel, instagramUrl, instagramHandle }: Galle
           </FadeIn>
         ))}
       </div>
-      <p className="font-jp text-xs text-center" style={{ color: 'rgba(90,69,53,0.5)' }}>
+      <p className="font-jp text-xs text-center" style={{ color: 'rgba(107,78,78,0.5)' }}>
         ※ 施術写真は順次追加予定です。{' '}
         <a
           href={instagramUrl}
@@ -94,7 +94,7 @@ export function Gallery() {
     <section
       id="gallery"
       className="relative py-24 md:py-40 px-4"
-      style={{ background: 'linear-gradient(180deg, #FAF6F0 0%, #F0E9DC 100%)' }}
+      style={{ background: 'linear-gradient(180deg, #FFFFFF 0%, #FDF2F4 100%)' }}
       aria-labelledby="gallery-heading"
     >
       <div className="max-w-5xl mx-auto">
@@ -106,7 +106,7 @@ export function Gallery() {
           <h2
             id="gallery-heading"
             className="font-script text-5xl md:text-6xl text-center leading-tight mb-12"
-            style={{ color: '#2A1F14' }}
+            style={{ color: '#3D2B2B' }}
           >
             ギャラリー
           </h2>
@@ -136,7 +136,7 @@ export function Gallery() {
                 }`}
                 style={{
                   color:
-                    activeTab === tab.id ? '#9C7A1A' : 'rgba(90,69,53,0.5)',
+                    activeTab === tab.id ? '#9C7A1A' : 'rgba(107,78,78,0.5)',
                 }}
               >
                 {tab.label}

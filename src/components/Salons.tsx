@@ -60,7 +60,7 @@ export function Salons() {
               variant="glass"
               className="p-8 md:p-14"
               style={{
-                background: 'linear-gradient(135deg, rgba(250,246,240,0.72) 0%, rgba(245,239,250,0.60) 100%)',
+                background: 'linear-gradient(135deg, rgba(255,255,255,0.82) 0%, rgba(253,242,244,0.65) 100%)',
               }}
             >
               <div className="flex items-center gap-4 mb-8">
@@ -113,7 +113,7 @@ export function Salons() {
               variant="glass"
               className="p-8 md:p-14"
               style={{
-                background: 'linear-gradient(135deg, rgba(250,246,240,0.72) 0%, rgba(255,248,238,0.60) 100%)',
+                background: 'linear-gradient(135deg, rgba(255,255,255,0.82) 0%, rgba(253,242,244,0.65) 100%)',
               }}
             >
               <div className="flex items-center gap-4 mb-8">

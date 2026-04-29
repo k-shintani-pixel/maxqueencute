@@ -13,17 +13,17 @@ export function Hero() {
       className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden"
       aria-label="ファーストビュー"
     >
-      {/* ── Deep royal purple → lavender → cream gradient ── */}
+      {/* ── Deep rose → blush → powder pink gradient ── */}
       <div
         className="absolute inset-0"
         style={{
           background:
-            'linear-gradient(160deg, #1C0A32 0%, #3A1C6A 22%, #6B4A9B 44%, #C4B5DB 64%, #EDE6FA 78%, #FAF6F0 90%, #F0E9DC 100%)',
+            'linear-gradient(160deg, #3D0A1E 0%, #7B1A3C 20%, #C05070 42%, #EDA8BB 62%, #FDE8EE 80%, #FDF2F4 92%, #FFFFFF 100%)',
         }}
         aria-hidden="true"
       />
 
-      {/* ── Marble-vein overlay on dark section ── */}
+      {/* ── Marble-vein overlay ── */}
       <div
         className="absolute inset-0 opacity-[0.07]"
         style={{
@@ -41,7 +41,7 @@ export function Hero() {
         style={{
           backgroundImage: [
             'radial-gradient(ellipse 60% 40% at 15% 85%, rgba(212,175,55,0.12) 0%, transparent 60%)',
-            'radial-gradient(ellipse 50% 35% at 85% 15%, rgba(196,181,219,0.18) 0%, transparent 60%)',
+            'radial-gradient(ellipse 50% 35% at 85% 15%, rgba(240,189,208,0.2) 0%, transparent 60%)',
           ].join(','),
         }}
         aria-hidden="true"
@@ -78,8 +78,8 @@ export function Hero() {
             className="font-script leading-none"
             style={{
               fontSize: 'clamp(3.5rem, 10vw, 8rem)',
-              color: '#FAF6F0',
-              textShadow: `0 2px 40px rgba(45,24,84,0.5), 0 0 80px rgba(212,175,55,0.15)`,
+              color: '#FDF2F4',
+              textShadow: `0 2px 40px rgba(61,10,30,0.5), 0 0 80px rgba(212,175,55,0.15)`,
             }}
           >
             {siteConfig.salons.maxqueencute.name}
@@ -111,8 +111,8 @@ export function Hero() {
             className="font-script leading-none"
             style={{
               fontSize: 'clamp(2rem, 6vw, 5rem)',
-              color: 'rgba(250,246,240,0.78)',
-              textShadow: '0 2px 20px rgba(45,24,84,0.4)',
+              color: 'rgba(253,242,244,0.82)',
+              textShadow: '0 2px 20px rgba(61,10,30,0.4)',
             }}
           >
             {siteConfig.salons.ruri.name}
