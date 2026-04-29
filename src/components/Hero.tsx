@@ -5,7 +5,6 @@ import { siteConfig } from '@/config/site';
 
 /* Gold accent used throughout Hero */
 const GOLD = '#D4AF37';
-const GOLD_DIM = 'rgba(212,175,55,0.5)';
 
 export function Hero() {
   return (
