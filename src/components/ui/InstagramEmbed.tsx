@@ -54,13 +54,11 @@ export function InstagramEmbed({
           maxWidth: '480px',
           margin: '0 auto',
           overflow: 'hidden',
-          /* Height ≈ image width (square post). Instagram header is ~54px,
-             so the image fills roughly y=54 to y=534 of the iframe. */
-          height: '480px',
+          height: '560px',
         }}
       >
-        {/* Negative margin hides Instagram's top header */}
-        <div style={{ marginTop: '-54px' }}>
+        {/* Negative margin hides only the very top Instagram logo bar */}
+        <div style={{ marginTop: '-20px' }}>
           <blockquote
             className="instagram-media"
             data-instgrm-permalink={postUrl}
