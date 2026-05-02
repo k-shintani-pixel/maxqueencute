@@ -11,14 +11,14 @@ export default function PrivacyPage() {
     <div className="bg-base min-h-screen py-16 px-4">
       <div className="max-w-2xl mx-auto">
         <header className="mb-12 text-center">
-          <p className="font-serif-display text-xs tracking-[0.3em] text-secondary/40 uppercase mb-3">
+          <p className="font-serif-display text-xs tracking-[0.3em] text-gray-400 uppercase mb-3">
             Legal
           </p>
           <h1 className="font-script text-4xl text-accent-light mb-2">Privacy Policy</h1>
-          <p className="font-serif-jp text-sm text-secondary/50">プライバシーポリシー</p>
+          <p className="font-serif-jp text-sm text-gray-500">プライバシーポリシー</p>
         </header>
 
-        <div className="space-y-10 font-serif-jp text-sm leading-loose text-secondary/80">
+        <div className="space-y-10 font-serif-jp text-sm leading-loose text-gray-900">
           <section>
             <p>
               MaxQueenCute / Nail salon Ruri（以下「当サロン」）は、本ウェブサイト（以下「本サイト」）における個人情報の取り扱いについて、以下のとおり定めます。
@@ -30,10 +30,9 @@ export default function PrivacyPage() {
               1. 収集する情報
             </h2>
             <p>本サイトでは、以下の情報を収集することがあります。</p>
-            <ul className="list-disc list-inside mt-3 space-y-1 text-secondary/70">
+            <ul className="list-disc list-inside mt-3 space-y-1 text-gray-700">
               <li>アクセスログ（IPアドレス、ブラウザ種別、参照元URL、閲覧ページ等）</li>
               <li>Cookie およびこれに類する技術により収集される情報</li>
-              <li>お問い合わせフォーム等を通じてご入力いただいた情報</li>
             </ul>
           </section>
 
@@ -41,9 +40,8 @@ export default function PrivacyPage() {
             <h2 className="font-serif-display text-xs tracking-widest text-accent-light uppercase mb-4">
               2. 利用目的
             </h2>
-            <ul className="list-disc list-inside space-y-1 text-secondary/70">
+            <ul className="list-disc list-inside space-y-1 text-gray-700">
               <li>本サイトの利用状況の分析・改善</li>
-              <li>お問い合わせへの対応</li>
               <li>サービスに関する情報のご提供</li>
             </ul>
           </section>
@@ -84,16 +82,7 @@ export default function PrivacyPage() {
             </p>
           </section>
 
-          <section>
-            <h2 className="font-serif-display text-xs tracking-widest text-accent-light uppercase mb-4">
-              7. お問い合わせ
-            </h2>
-            <p>
-              個人情報の取り扱いに関するお問い合わせは、Instagram ダイレクトメッセージよりご連絡ください。
-            </p>
-          </section>
-
-          <p className="text-xs text-secondary/40 pt-4 border-t border-secondary/10">
+          <p className="text-xs text-gray-400 pt-4 border-t border-gray-200">
             制定日：2026年5月
           </p>
         </div>
@@ -101,7 +90,7 @@ export default function PrivacyPage() {
         <div className="mt-12 text-center">
           <Link
             href="/"
-            className="font-serif-display text-xs tracking-widest text-secondary/40 hover:text-accent-light transition-colors uppercase"
+            className="font-serif-display text-xs tracking-widest text-gray-400 hover:text-accent-light transition-colors uppercase"
           >
             ← Back to Top
           </Link>
