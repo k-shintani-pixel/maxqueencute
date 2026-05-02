@@ -49,17 +49,10 @@ export function Footer() {
         {/* Links */}
         <div className="flex items-center justify-center gap-6 mb-8 flex-wrap">
           <a
-            href="#"
+            href="/privacy"
             className="font-serif-display text-xs tracking-widest text-secondary/50 hover:text-accent-light transition-colors uppercase"
           >
             Privacy Policy
-          </a>
-          <span className="text-secondary/30">|</span>
-          <a
-            href="#"
-            className="font-serif-display text-xs tracking-widest text-secondary/50 hover:text-accent-light transition-colors"
-          >
-            特定商取引法に基づく表記
           </a>
         </div>
 
