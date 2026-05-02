@@ -17,7 +17,7 @@ export function Hero() {
       <div
         className="absolute inset-0"
         style={{
-          background: 'radial-gradient(ellipse 90% 80% at 50% 50%, #FFFFFF 0%, #FFF5F8 45%, #FDEEF4 100%)',
+          background: 'radial-gradient(ellipse 90% 80% at 50% 50%, #FFFFFF 0%, #FFF5F8 45%, #FDE4ED 100%)',
         }}
         aria-hidden="true"
       />
