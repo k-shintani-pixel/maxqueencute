@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Italianno, Cormorant_Garamond, Noto_Serif_JP } from 'next/font/google';
 import Script from 'next/script';
+import { Analytics } from '@vercel/analytics/next';
 import './globals.css';
 
 const italianno = Italianno({
@@ -72,6 +73,7 @@ export default function RootLayout({
         {children}
         <Script src="https://www.instagram.com/embed.js" strategy="lazyOnload" />
         <Script src="https://elfsightcdn.com/platform.js" strategy="lazyOnload" />
+        <Analytics />
       </body>
     </html>
   );
